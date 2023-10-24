@@ -16,13 +16,12 @@ Expires: 26 April 2024                                     Quant Network
 
 Abstract
 
-   This memo This memo describes the Secure Asset Transfer (SAT)
-   Protocol for digital assets.  SAT is a protocol operating between two
-   gateways that conducts the transfer of a digital asset from one
-   gateway to another.  The protocol establishes a secure channel
-   between the endpoints and implements a 2-phase commit to ensure the
-   properties of transfer atomicity, consistency, isolation and
-   durability.
+   This memo describes the Secure Asset Transfer (SAT) Protocol for
+   digital assets.  SAT is a protocol operating between two gateways
+   that conducts the transfer of a digital asset from one gateway to
+   another.  The protocol establishes a secure channel between the
+   endpoints and implements a 2-phase commit to ensure the properties of
+   transfer atomicity, consistency, isolation and durability.
 
 About This Document
 
