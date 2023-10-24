@@ -5,8 +5,8 @@
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
 <title>Secure Asset Transfer Protocol (SATP) Core</title>
-<meta content="Thomas Hardjono" name="author">
 <meta content="Martin Hargreaves" name="author">
+<meta content="Thomas Hardjono" name="author">
 <meta content="Rafael Belchior" name="author">
 <meta content="
        This memo describes the Secure Asset Transfer (SAT) Protocol for digital assets.
@@ -1035,7 +1035,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">October 2023</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Hardjono, et al.</td>
+<td class="left">Hargreaves, et al.</td>
 <td class="center">Expires 26 April 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1058,12 +1058,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
-      <div class="author-name">T. Hardjono</div>
-<div class="org">MIT</div>
-</div>
-<div class="author">
       <div class="author-name">M. Hargreaves</div>
 <div class="org">Quant Network</div>
+</div>
+<div class="author">
+      <div class="author-name">T. Hardjono</div>
+<div class="org">MIT</div>
 </div>
 <div class="author">
       <div class="author-name">R. Belchior</div>
@@ -1179,85 +1179,82 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-satp-message-format-identif" class="internal xref">SATP Message Format, identifiers and Descriptors</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-overview-2" class="internal xref">Overview</a></p>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-satp-message-format" class="internal xref">SATP Message Format</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-satp-message-format" class="internal xref">SATP Message Format</a></p>
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-digital-asset-resource-desc" class="internal xref">Digital Asset Resource Descriptors</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.1">
+                    <p id="section-toc.1-1.5.2.2.2.1.1"><a href="#section-5.2.1" class="auto internal xref">5.2.1</a>.  <a href="#name-organization-identifier" class="internal xref">Organization Identifier</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.2">
+                    <p id="section-toc.1-1.5.2.2.2.2.1"><a href="#section-5.2.2" class="auto internal xref">5.2.2</a>.  <a href="#name-gateway-endpoint-id" class="internal xref">Gateway / Endpoint ID</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.3">
+                    <p id="section-toc.1-1.5.2.2.2.3.1"><a href="#section-5.2.3" class="auto internal xref">5.2.3</a>.  <a href="#name-network-or-system-identifie" class="internal xref">Network or system Identifier</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.4">
+                    <p id="section-toc.1-1.5.2.2.2.4.1"><a href="#section-5.2.4" class="auto internal xref">5.2.4</a>.  <a href="#name-network-resource" class="internal xref">Network Resource</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.5">
+                    <p id="section-toc.1-1.5.2.2.2.5.1"><a href="#section-5.2.5" class="auto internal xref">5.2.5</a>.  <a href="#name-examples" class="internal xref">Examples</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-digital-asset-resource-desc" class="internal xref">Digital Asset Resource Descriptors</a></p>
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-digital-asset-resource-clie" class="internal xref">Digital Asset Resource Client Descriptors</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.1">
-                    <p id="section-toc.1-1.5.2.3.2.1.1"><a href="#section-5.3.1" class="auto internal xref">5.3.1</a>.  <a href="#name-organization-identifier" class="internal xref">Organization Identifier</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.1.1"><a href="#section-5.3.1" class="auto internal xref">5.3.1</a>.  <a href="#name-organization-identifier-2" class="internal xref">Organization Identifier</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.2">
-                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="auto internal xref">5.3.2</a>.  <a href="#name-gateway-endpoint-id" class="internal xref">Gateway / Endpoint ID</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="auto internal xref">5.3.2</a>.  <a href="#name-gateway-endpoint-id-2" class="internal xref">Gateway / Endpoint ID</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.3">
-                    <p id="section-toc.1-1.5.2.3.2.3.1"><a href="#section-5.3.3" class="auto internal xref">5.3.3</a>.  <a href="#name-network-or-system-identifie" class="internal xref">Network or system Identifier</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.3.1"><a href="#section-5.3.3" class="auto internal xref">5.3.3</a>.  <a href="#name-organizational-unit" class="internal xref">Organizational Unit</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.4">
-                    <p id="section-toc.1-1.5.2.3.2.4.1"><a href="#section-5.3.4" class="auto internal xref">5.3.4</a>.  <a href="#name-network-resource" class="internal xref">Network Resource</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.4.1"><a href="#section-5.3.4" class="auto internal xref">5.3.4</a>.  <a href="#name-name" class="internal xref">Name</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.5">
-                    <p id="section-toc.1-1.5.2.3.2.5.1"><a href="#section-5.3.5" class="auto internal xref">5.3.5</a>.  <a href="#name-examples" class="internal xref">Examples</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.5.1"><a href="#section-5.3.5" class="auto internal xref">5.3.5</a>.  <a href="#name-examples-2" class="internal xref">Examples</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.6">
+                    <p id="section-toc.1-1.5.2.3.2.6.1"><a href="#section-5.3.6" class="auto internal xref">5.3.6</a>.  <a href="#name-gateway-level-access-contro" class="internal xref">Gateway Level Access Control</a></p>
 </li>
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
-                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-digital-asset-resource-clie" class="internal xref">Digital Asset Resource Client Descriptors</a></p>
+                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-negotiation-of-security-pro" class="internal xref">Negotiation of Security Protocols and Parameters</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.1">
-                    <p id="section-toc.1-1.5.2.4.2.1.1"><a href="#section-5.4.1" class="auto internal xref">5.4.1</a>.  <a href="#name-organization-identifier-2" class="internal xref">Organization Identifier</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.1.1"><a href="#section-5.4.1" class="auto internal xref">5.4.1</a>.  <a href="#name-tls-established" class="internal xref">TLS Established</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.2">
-                    <p id="section-toc.1-1.5.2.4.2.2.1"><a href="#section-5.4.2" class="auto internal xref">5.4.2</a>.  <a href="#name-gateway-endpoint-id-2" class="internal xref">Gateway / Endpoint ID</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.2.1"><a href="#section-5.4.2" class="auto internal xref">5.4.2</a>.  <a href="#name-client-offers-supported-cre" class="internal xref">Client offers supported credential schemes</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.3">
-                    <p id="section-toc.1-1.5.2.4.2.3.1"><a href="#section-5.4.3" class="auto internal xref">5.4.3</a>.  <a href="#name-organizational-unit" class="internal xref">Organizational Unit</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.3.1"><a href="#section-5.4.3" class="auto internal xref">5.4.3</a>.  <a href="#name-server-selects-supported-cr" class="internal xref">Server selects supported credential scheme</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.4">
-                    <p id="section-toc.1-1.5.2.4.2.4.1"><a href="#section-5.4.4" class="auto internal xref">5.4.4</a>.  <a href="#name-name" class="internal xref">Name</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.4.1"><a href="#section-5.4.4" class="auto internal xref">5.4.4</a>.  <a href="#name-client-asserts-or-proves-id" class="internal xref">Client asserts or proves identity</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.5">
-                    <p id="section-toc.1-1.5.2.4.2.5.1"><a href="#section-5.4.5" class="auto internal xref">5.4.5</a>.  <a href="#name-examples-2" class="internal xref">Examples</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.5.1"><a href="#section-5.4.5" class="auto internal xref">5.4.5</a>.  <a href="#name-sequence-numbers-initialize" class="internal xref">Sequence numbers initialized</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4.2.6">
-                    <p id="section-toc.1-1.5.2.4.2.6.1"><a href="#section-5.4.6" class="auto internal xref">5.4.6</a>.  <a href="#name-gateway-level-access-contro" class="internal xref">Gateway Level Access Control</a></p>
+                    <p id="section-toc.1-1.5.2.4.2.6.1"><a href="#section-5.4.6" class="auto internal xref">5.4.6</a>.  <a href="#name-messages-can-now-be-exchang" class="internal xref">Messages can now be exchanged</a></p>
 </li>
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5">
-                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-negotiation-of-security-pro" class="internal xref">Negotiation of Security Protocols and Parameters</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.1">
-                    <p id="section-toc.1-1.5.2.5.2.1.1"><a href="#section-5.5.1" class="auto internal xref">5.5.1</a>.  <a href="#name-tls-established" class="internal xref">TLS Established</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.2">
-                    <p id="section-toc.1-1.5.2.5.2.2.1"><a href="#section-5.5.2" class="auto internal xref">5.5.2</a>.  <a href="#name-client-offers-supported-cre" class="internal xref">Client offers supported credential schemes</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.3">
-                    <p id="section-toc.1-1.5.2.5.2.3.1"><a href="#section-5.5.3" class="auto internal xref">5.5.3</a>.  <a href="#name-server-selects-supported-cr" class="internal xref">Server selects supported credential scheme</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.4">
-                    <p id="section-toc.1-1.5.2.5.2.4.1"><a href="#section-5.5.4" class="auto internal xref">5.5.4</a>.  <a href="#name-client-asserts-or-proves-id" class="internal xref">Client asserts or proves identity</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.5">
-                    <p id="section-toc.1-1.5.2.5.2.5.1"><a href="#section-5.5.5" class="auto internal xref">5.5.5</a>.  <a href="#name-sequence-numbers-initialize" class="internal xref">Sequence numbers initialized</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5.2.6">
-                    <p id="section-toc.1-1.5.2.5.2.6.1"><a href="#section-5.5.6" class="auto internal xref">5.5.6</a>.  <a href="#name-messages-can-now-be-exchang" class="internal xref">Messages can now be exchanged</a></p>
-</li>
-                </ul>
+                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-asset-profile-identificatio" class="internal xref">Asset Profile Identification</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.6">
-                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-asset-profile-identificatio" class="internal xref">Asset Profile Identification</a></p>
+                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-application-profile-negotia" class="internal xref">Application Profile Negotiation</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.7">
-                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-application-profile-negotia" class="internal xref">Application Profile Negotiation</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.8">
-                <p id="section-toc.1-1.5.2.8.1"><a href="#section-5.8" class="auto internal xref">5.8</a>.  <a href="#name-discovery-of-digital-asset-" class="internal xref">Discovery of Digital Asset Resources</a></p>
+                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-discovery-of-digital-asset-" class="internal xref">Discovery of Digital Asset Resources</a></p>
 </li>
             </ul>
 </li>
@@ -1459,30 +1456,35 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-terminology">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-terminology" class="section-name selfRef">Terminology</a>
       </h2>
-<div class="alignLeft art-text artwork" id="section-3-1">
-<pre>
-    The following are some terminology used in the current document:
-
-    * Client application: This is the application employed by a user
-     to interact with a gateway.
-
-     * Gateway: The computer system functionally capable of acting
-    as a gateway in an asset transfer.
-
-     * Sender gateway: The gateway that initiates a unidirectional asset transfer.
-
-     * Recipient gateway: The gateway that is the recipient side of
-    a unidirectional asset transfer.
-
-     * Claim: An assertion made by an Entity [JWT].
-
-     * Claim Type: Syntax used for representing a Claim Value [JWT].
-
-     * Gateway Claim: An assertion made by a Gateway regarding the status or
-    condition of resources (e.g. assets, public keys, etc.)
-    accessible to that gateway (e.g. within its network or system).
-</pre><a href="#section-3-1" class="pilcrow">¶</a>
-</div>
+<p id="section-3-1">The following are some terminology used in the current document:<a href="#section-3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-3-2.1">
+          <p id="section-3-2.1.1">Client application: This is the application employed by a user
+       to interact with a gateway.<a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.2">
+          <p id="section-3-2.2.1">Gateway: The computer system functionally capable of acting
+      as a gateway in an asset transfer.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.3">
+          <p id="section-3-2.3.1">Sender gateway: The gateway that initiates a unidirectional asset transfer.<a href="#section-3-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.4">
+          <p id="section-3-2.4.1">Recipient gateway: The gateway that is the recipient side of
+      a unidirectional asset transfer.<a href="#section-3-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.5">
+          <p id="section-3-2.5.1">Claim: An assertion made by an Entity [JWT].<a href="#section-3-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.6">
+          <p id="section-3-2.6.1">Claim Type: Syntax used for representing a Claim Value [JWT].<a href="#section-3-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-3-2.7">
+          <p id="section-3-2.7.1">Gateway Claim: An assertion made by a Gateway regarding the status or
+      condition of resources (e.g. assets, public keys, etc.)
+      accessible to that gateway (e.g. within its network or system).<a href="#section-3-2.7.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 </section>
 </div>
 <div id="satp-protocol">
@@ -1507,7 +1509,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
             between the two gateways.
 </pre><a href="#section-4.1-1" class="pilcrow">¶</a>
 </div>
-<div class="alignLeft art-text artwork" id="section-4.1-2">
+<div id="satp-fig-overview">
+<figure id="figure-1">
+          <div class="alignLeft art-text artwork" id="section-4.1-2.1">
 <pre>
              +----------+                +----------+
              |  Client  |                | Off-net  |
@@ -1526,7 +1530,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
   |      |   |          | 2  |        | 2  |          |   |      |
   +------+   +----------+----+        +----+----------+   +------+
 
-</pre><a href="#section-4.1-2" class="pilcrow">¶</a>
+</pre>
+</div>
+<figcaption><a href="#figure-1" class="selfRef">Figure 1</a></figcaption></figure>
 </div>
 </section>
 </div>
@@ -1535,10 +1541,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-sat-model">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-sat-model" class="section-name selfRef">SAT Model</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-4.2-1">
+<p id="section-4.2-1">The model for SATP is shown in Figure 1.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.2-2">
 <pre>
-             The model for SATP is shown in Figure 1.
-
              The Client (application) interacts with its local gateway (G1)
             over an interface (API Type-1) in order to provide instructions
             to the gateway with regards to actions to assets and related
@@ -1549,7 +1554,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             not located in network NW1 or network NW2.
             Access to these types of resources are performed
             over an off-network interface (API Type-3).
-</pre><a href="#section-4.2-1" class="pilcrow">¶</a>
+</pre><a href="#section-4.2-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -1558,7 +1563,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-types-of-apis">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-types-of-apis" class="section-name selfRef">Types of APIs</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-4.3-1">
+<p id="section-4.3-1">The following are the types of APIs in SATP:<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.3-2">
 <pre>
                             * Gateway APIs for client (API Type-1):
                             This the REST APIs that permit a Client (application)
@@ -1576,7 +1582,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 
 
             The use of these APIs is dependent on the mode of access and the type of flow in question.
-</pre><a href="#section-4.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-4.3-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -1585,7 +1591,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-types-of-flows">
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-types-of-flows" class="section-name selfRef">Types of Flows</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-4.4-1">
+<p id="section-4.4-1">The SAT protocol defines the following three (3) flows:<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.4-2">
 <pre>
                             * Transfer Initiation flow:
                             This flow deals with commencing a transfer from one gateway to another.
@@ -1603,8 +1610,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             This flow deals with the asset transfer and commitment
                             establishment between two gateways.
 
-    These flow will be discussed below.
-</pre><a href="#section-4.4-1" class="pilcrow">¶</a>
+  These flow will be discussed below.
+</pre><a href="#section-4.4-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -1642,11 +1649,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-satp-message-format-identif" class="section-name selfRef">SATP Message Format, identifiers and Descriptors</a>
       </h2>
 <div id="satp-overview-messages-identifiers">
-<section id="section-5.1">
-        <h3 id="name-overview-2">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-overview-2" class="section-name selfRef">Overview</a>
-        </h3>
-<div class="alignLeft art-text artwork" id="section-5.1-1">
+<p id="section-5-1">## Overview<a href="#section-5-1" class="pilcrow">¶</a></p>
+</div>
+<div class="alignLeft art-text artwork" id="section-5-2">
 <pre>
               This section describes (i) the phases of SATP;
              (ii) the format of SATP messages; (iii) the format for resource descriptors;
@@ -1654,86 +1659,110 @@ svg :is([fill="white"], [fill^="#fff"]) {
             (iv) protocol for negotiating security capabilities;
             (v) discovery and accessing resources and provisions for
             backward compatibility with existing systems.
-</pre><a href="#section-5.1-1" class="pilcrow">¶</a>
-</div>
-</section>
+</pre><a href="#section-5-2" class="pilcrow">¶</a>
 </div>
 <div id="satp-message-format">
-<section id="section-5.2">
+<section id="section-5.1">
         <h3 id="name-satp-message-format">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-satp-message-format" class="section-name selfRef">SATP Message Format</a>
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-satp-message-format" class="section-name selfRef">SATP Message Format</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.2-1">
+<div class="alignLeft art-text artwork" id="section-5.1-1">
 <pre>
               SATP messages are exchanged between applications (clients)
              and gateways (servers).
              They consist of protocol negotiation and functional messages.
 
-              Messages are in JSON format, with protocol specific mandatory fields,
+            Messages are in JSON format, with protocol specific mandatory fields,
              support for several authentication and authorization schemes and support
              for a free format field for plaintext or encrypted payloads
              directed at the gateway.
 
-            JSON format message, mandatory fields are shown below:
-                            * Version: SATP protocol Version (major, minor).
-
-                            * Message Type: This refers to the type of request or response to be conveyed in this message.
-
-    * Session ID: unique identifier (UUIDv2) representing
-                               a session between two gateways handling a single unidirectional transfer.
-
-    * Transfer-Context ID: unique optional identifier (UUIDv2)
-                            representing the application layer context.
-
-    * Sequence Number: Monotonically increasing counter that uniquely represents a message from a session.
-
-    * Resource URL: Location of Resource to be accessed.
-
-    * Developer URN: Assertion of developer / application identity.
-
-    * Action/Response: GET/POST and arguments (or Response Code)
-
-    * Credential Profile: Specify type of auth (e.g. SAML, OAuth, X.509)
-
-    * Credential Block: Credential token, certificate, string
-
-    * Payload Profile: Asset profile and capabilities
-
-    * Application Profile: Vendor or Application specific profile
-
-                            Payload: Payload for POST, responses, and local networks.
-                                    The payload is specific to the current SAT phase.
-
-                            Payload Hash: hash of the current message payload.
-                            Message signature: Gateway EDCSA signature over the message
-
-            Other relevant attributes may exists that need to be
-            captured for logging purposes.
-</pre><a href="#section-5.2-1" class="pilcrow">¶</a>
+            JSON format message, mandatory fields are shown below: * Version: SATP protocol Version (major, minor).
+</pre><a href="#section-5.1-1" class="pilcrow">¶</a>
 </div>
+<ul class="normal">
+<li class="normal" id="section-5.1-2.1">
+            <p id="section-5.1-2.1.1">Message Type: This refers to the type of request or response to be conveyed in this message.<a href="#section-5.1-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.2">
+            <p id="section-5.1-2.2.1">Session ID: unique identifier (UUIDv2) representing
+                                 a session between two gateways handling a single unidirectional transfer.<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.3">
+            <p id="section-5.1-2.3.1">Transfer-Context ID: unique optional identifier (UUIDv2)
+                              representing the application layer context.<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.4">
+            <p id="section-5.1-2.4.1">Sequence Number: Monotonically increasing counter that uniquely represents a message from a session.<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.5">
+            <p id="section-5.1-2.5.1">Resource URL: Location of Resource to be accessed.<a href="#section-5.1-2.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.6">
+            <p id="section-5.1-2.6.1">Developer URN: Assertion of developer / application identity.<a href="#section-5.1-2.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.7">
+            <p id="section-5.1-2.7.1">Action/Response: GET/POST and arguments (or Response Code)<a href="#section-5.1-2.7.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.8">
+            <p id="section-5.1-2.8.1">Credential Profile: Specify type of auth (e.g. SAML, OAuth, X.509)<a href="#section-5.1-2.8.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.9">
+            <p id="section-5.1-2.9.1">Credential Block: Credential token, certificate, string<a href="#section-5.1-2.9.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.10">
+            <p id="section-5.1-2.10.1">Payload Profile: Asset profile and capabilities<a href="#section-5.1-2.10.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.11">
+            <p id="section-5.1-2.11.1">Application Profile: Vendor or Application specific profile<a href="#section-5.1-2.11.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.12">
+            <p id="section-5.1-2.12.1">Payload: Payload for POST, responses, and local networks.
+                                      The payload is specific to the current SAT phase.<a href="#section-5.1-2.12.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.13">
+            <p id="section-5.1-2.13.1">Payload Hash: hash of the current message payload.<a href="#section-5.1-2.13.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.14">
+            <p id="section-5.1-2.14.1">Message signature: Gateway EDCSA signature over the message<a href="#section-5.1-2.14.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-5.1-2.14.2">
+<pre>
+          Other relevant attributes may exists that need to be captured for logging purposes.
+</pre><a href="#section-5.1-2.14.2" class="pilcrow">¶</a>
+</div>
+</li>
+        </ul>
 </section>
 </div>
 <div id="satp-resource-descriptor-sec">
-<section id="section-5.3">
+<section id="section-5.2">
         <h3 id="name-digital-asset-resource-desc">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-digital-asset-resource-desc" class="section-name selfRef">Digital Asset Resource Descriptors</a>
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-digital-asset-resource-desc" class="section-name selfRef">Digital Asset Resource Descriptors</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.3-1">
+<div class="alignLeft art-text artwork" id="section-5.2-1">
 <pre>
             Resources are identified by URL [RFC1738] as described below:
-                                    * The type is new: application/satres
-
-                                    * The access protocol is SATP.
-
-            Data included in the URL includes the folowing:
-</pre><a href="#section-5.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2-1" class="pilcrow">¶</a>
 </div>
+<ul class="normal">
+<li class="normal" id="section-5.2-2.1">
+            <p id="section-5.2-2.1.1">The type is new: application/satres<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.2-2.2">
+            <p id="section-5.2-2.2.1">The access protocol is SATP.<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-5.2-2.2.2">
+<pre>
+          Data included in the URL includes the folowing:
+</pre><a href="#section-5.2-2.2.2" class="pilcrow">¶</a>
+</div>
+</li>
+        </ul>
 <div id="satp-org-id-sec">
-<section id="section-5.3.1">
+<section id="section-5.2.1">
           <h4 id="name-organization-identifier">
-<a href="#section-5.3.1" class="section-number selfRef">5.3.1. </a><a href="#name-organization-identifier" class="section-name selfRef">Organization Identifier</a>
+<a href="#section-5.2.1" class="section-number selfRef">5.2.1. </a><a href="#name-organization-identifier" class="section-name selfRef">Organization Identifier</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.3.1-1">
+<div class="alignLeft art-text artwork" id="section-5.2.1-1">
 <pre>
                               This MAY be a Legal Entity Identifier (LEI) or other
                              identifier linking resource ownership to a real world entity.
@@ -1748,29 +1777,29 @@ svg :is([fill="white"], [fill^="#fff"]) {
 
                             The mechanisms to determine organizations identifiers
                             is out of scope for the current specification.
-</pre><a href="#section-5.3.1-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2.1-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-gateway-id-sec">
-<section id="section-5.3.2">
+<section id="section-5.2.2">
           <h4 id="name-gateway-endpoint-id">
-<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-gateway-endpoint-id" class="section-name selfRef">Gateway / Endpoint ID</a>
+<a href="#section-5.2.2" class="section-number selfRef">5.2.2. </a><a href="#name-gateway-endpoint-id" class="section-name selfRef">Gateway / Endpoint ID</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.3.2-1">
+<div class="alignLeft art-text artwork" id="section-5.2.2-1">
 <pre>
                     FQDN of the SATP compliant gateway. Required to establish IP connectivity.
                             This MUST resolve to a valid IP address.
-</pre><a href="#section-5.3.2-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-dlt-id-sec">
-<section id="section-5.3.3">
+<section id="section-5.2.3">
           <h4 id="name-network-or-system-identifie">
-<a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-network-or-system-identifie" class="section-name selfRef">Network or system Identifier</a>
+<a href="#section-5.2.3" class="section-number selfRef">5.2.3. </a><a href="#name-network-or-system-identifie" class="section-name selfRef">Network or system Identifier</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.3.3-1">
+<div class="alignLeft art-text artwork" id="section-5.2.3-1">
 <pre>
                              Specific to the gateway behind which the target network operates.
                             This field is local to the gateway and is used to direct
@@ -1778,16 +1807,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             This value maybe alphanumeric or a hexadecimal value.
 
                              For example: "tradelens-network", "EU-supply-chain".
-</pre><a href="#section-5.3.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2.3-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-network-resource-sec">
-<section id="section-5.3.4">
+<section id="section-5.2.4">
           <h4 id="name-network-resource">
-<a href="#section-5.3.4" class="section-number selfRef">5.3.4. </a><a href="#name-network-resource" class="section-name selfRef">Network Resource</a>
+<a href="#section-5.2.4" class="section-number selfRef">5.2.4. </a><a href="#name-network-resource" class="section-name selfRef">Network Resource</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.3.4-1">
+<div class="alignLeft art-text artwork" id="section-5.2.4-1">
 <pre>
                              Specifies a resource held on the underlying network.
                             This field must be meaningful to the network in question
@@ -1795,30 +1824,30 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             The underlying object it points to may be a network address,
                             data block, transaction ID, alias, etc. or
                             a future object type not yet defined.
-</pre><a href="#section-5.3.4-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2.4-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-resource-example-sec">
-<section id="section-5.3.5">
+<section id="section-5.2.5">
           <h4 id="name-examples">
-<a href="#section-5.3.5" class="section-number selfRef">5.3.5. </a><a href="#name-examples" class="section-name selfRef">Examples</a>
+<a href="#section-5.2.5" class="section-number selfRef">5.2.5. </a><a href="#name-examples" class="section-name selfRef">Examples</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.3.5-1">
+<div class="alignLeft art-text artwork" id="section-5.2.5-1">
 <pre>
                             satpres://quant/api.gateway1.com/swift
-</pre><a href="#section-5.3.5-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.2.5-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 </section>
 </div>
 <div id="satp-clientresource-descriptor-sec">
-<section id="section-5.4">
+<section id="section-5.3">
         <h3 id="name-digital-asset-resource-clie">
-<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-digital-asset-resource-clie" class="section-name selfRef">Digital Asset Resource Client Descriptors</a>
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-digital-asset-resource-clie" class="section-name selfRef">Digital Asset Resource Client Descriptors</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.4-1">
+<div class="alignLeft art-text artwork" id="section-5.3-1">
 <pre>
             Resources are identified by URN as described below:
 
@@ -1827,14 +1856,14 @@ svg :is([fill="white"], [fill^="#fff"]) {
             The URN format does not imply availability of access protocol.
 
             Data included in the URN includes the following:
-</pre><a href="#section-5.4-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3-1" class="pilcrow">¶</a>
 </div>
 <div id="satp-client-org-id-sec">
-<section id="section-5.4.1">
+<section id="section-5.3.1">
           <h4 id="name-organization-identifier-2">
-<a href="#section-5.4.1" class="section-number selfRef">5.4.1. </a><a href="#name-organization-identifier-2" class="section-name selfRef">Organization Identifier</a>
+<a href="#section-5.3.1" class="section-number selfRef">5.3.1. </a><a href="#name-organization-identifier-2" class="section-name selfRef">Organization Identifier</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.1-1">
+<div class="alignLeft art-text artwork" id="section-5.3.1-1">
 <pre>
                              Legal Entity Identifier (LEI) or other identifier
                             linking resource ownership to a real-world entity.
@@ -1845,16 +1874,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             The identifier is not a trusted identity,
                             but MAY be relied on where trust has been established
                             between the two parties (e.g. in a closed user group).
-</pre><a href="#section-5.4.1-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.1-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-client-gateway-id-sec">
-<section id="section-5.4.2">
+<section id="section-5.3.2">
           <h4 id="name-gateway-endpoint-id-2">
-<a href="#section-5.4.2" class="section-number selfRef">5.4.2. </a><a href="#name-gateway-endpoint-id-2" class="section-name selfRef">Gateway / Endpoint ID</a>
+<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-gateway-endpoint-id-2" class="section-name selfRef">Gateway / Endpoint ID</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.2-1">
+<div class="alignLeft art-text artwork" id="section-5.3.2-1">
 <pre>
                              Applications which interact with multiple networks
                             can operate in a mode whereby the application connects to its local gateway,
@@ -1866,16 +1895,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
                              This may be required to carry out gateway to gateway handshaking
                              and protocol negotiation, or for the server to look up use
                              case specific data relating to the client.
-</pre><a href="#section-5.4.2-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-client-org-unit-sec">
-<section id="section-5.4.3">
+<section id="section-5.3.3">
           <h4 id="name-organizational-unit">
-<a href="#section-5.4.3" class="section-number selfRef">5.4.3. </a><a href="#name-organizational-unit" class="section-name selfRef">Organizational Unit</a>
+<a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-organizational-unit" class="section-name selfRef">Organizational Unit</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.3-1">
+<div class="alignLeft art-text artwork" id="section-5.3.3-1">
 <pre>
                              The organization unit within the organization that the client
                             (application or developer) belongs to.
@@ -1886,44 +1915,44 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             authentication and authorization schemes used,
                             supporting future changes and supporting counterparties
                             that operate different schemes.
-</pre><a href="#section-5.4.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.3-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-client-dlt-resource-sec">
-<section id="section-5.4.4">
+<section id="section-5.3.4">
           <h4 id="name-name">
-<a href="#section-5.4.4" class="section-number selfRef">5.4.4. </a><a href="#name-name" class="section-name selfRef">Name</a>
+<a href="#section-5.3.4" class="section-number selfRef">5.3.4. </a><a href="#name-name" class="section-name selfRef">Name</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.4-1">
+<div class="alignLeft art-text artwork" id="section-5.3.4-1">
 <pre>
                             A locally unique (within the OU) identifier, which can identify the application,
                             project or individual developer responsible for this client connection.
                             This is the most granular unit of access control,
                             and gateways should ensure appropriate identifiers
                             are used for the needs of the application or use case.
-</pre><a href="#section-5.4.4-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.4-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-client-resource-example-sec">
-<section id="section-5.4.5">
+<section id="section-5.3.5">
           <h4 id="name-examples-2">
-<a href="#section-5.4.5" class="section-number selfRef">5.4.5. </a><a href="#name-examples-2" class="section-name selfRef">Examples</a>
+<a href="#section-5.3.5" class="section-number selfRef">5.3.5. </a><a href="#name-examples-2" class="section-name selfRef">Examples</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.5-1">
+<div class="alignLeft art-text artwork" id="section-5.3.5-1">
 <pre>
                             satclient:quant/api.overledger.quant.com/research/luke.riley
-</pre><a href="#section-5.4.5-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.5-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-gateway-access-sec">
-<section id="section-5.4.6">
+<section id="section-5.3.6">
           <h4 id="name-gateway-level-access-contro">
-<a href="#section-5.4.6" class="section-number selfRef">5.4.6. </a><a href="#name-gateway-level-access-contro" class="section-name selfRef">Gateway Level Access Control</a>
+<a href="#section-5.3.6" class="section-number selfRef">5.3.6. </a><a href="#name-gateway-level-access-contro" class="section-name selfRef">Gateway Level Access Control</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.4.6-1">
+<div class="alignLeft art-text artwork" id="section-5.3.6-1">
 <pre>
             Gateways can enforce access rules based on standard naming conventions using
             novel or existing mechanisms such as AuthZ protocols using
@@ -1947,49 +1976,49 @@ svg :is([fill="white"], [fill^="#fff"]) {
             groups and organizations. Individual gateway implementations may implement access controls,
             including subsetting and supersetting or applications or
             resources according to their own requirements.
-</pre><a href="#section-5.4.6-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.3.6-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 </section>
 </div>
 <div id="satp-negotiation-sec">
-<section id="section-5.5">
+<section id="section-5.4">
         <h3 id="name-negotiation-of-security-pro">
-<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-negotiation-of-security-pro" class="section-name selfRef">Negotiation of Security Protocols and Parameters</a>
+<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-negotiation-of-security-pro" class="section-name selfRef">Negotiation of Security Protocols and Parameters</a>
         </h3>
 <div id="satp-tls-Established-sec">
-<section id="section-5.5.1">
+<section id="section-5.4.1">
           <h4 id="name-tls-established">
-<a href="#section-5.5.1" class="section-number selfRef">5.5.1. </a><a href="#name-tls-established" class="section-name selfRef">TLS Established</a>
+<a href="#section-5.4.1" class="section-number selfRef">5.4.1. </a><a href="#name-tls-established" class="section-name selfRef">TLS Established</a>
           </h4>
-<p id="section-5.5.1-1">TLS 1.2 or higher MUST be implemented to protect gateway communications.
+<p id="section-5.4.1-1">TLS 1.2 or higher MUST be implemented to protect gateway communications.
                                 TLS 1.3 or higher SHOULD be implemented where both
-                                gateways support TLS 1.3 or higher.<a href="#section-5.5.1-1" class="pilcrow">¶</a></p>
+                                gateways support TLS 1.3 or higher.<a href="#section-5.4.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="satp-client-offers-sec">
-<section id="section-5.5.2">
+<section id="section-5.4.2">
           <h4 id="name-client-offers-supported-cre">
-<a href="#section-5.5.2" class="section-number selfRef">5.5.2. </a><a href="#name-client-offers-supported-cre" class="section-name selfRef">Client offers supported credential schemes</a>
+<a href="#section-5.4.2" class="section-number selfRef">5.4.2. </a><a href="#name-client-offers-supported-cre" class="section-name selfRef">Client offers supported credential schemes</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.5.2-1">
+<div class="alignLeft art-text artwork" id="section-5.4.2-1">
 <pre>
                             Capability negotiation prior to data exchange,
                             follows a scheme similar to the Session Description Protocol [RFC 5939].
                             Initially the client (application) sends a JSON block containing
                             acceptable credential schemes, e.g. OAuth2.0, SAML in
                             the "Credential Scheme" field of the SATP message.
-</pre><a href="#section-5.5.2-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.4.2-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-server-selects-sec">
-<section id="section-5.5.3">
+<section id="section-5.4.3">
           <h4 id="name-server-selects-supported-cr">
-<a href="#section-5.5.3" class="section-number selfRef">5.5.3. </a><a href="#name-server-selects-supported-cr" class="section-name selfRef">Server selects supported credential scheme</a>
+<a href="#section-5.4.3" class="section-number selfRef">5.4.3. </a><a href="#name-server-selects-supported-cr" class="section-name selfRef">Server selects supported credential scheme</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.5.3-1">
+<div class="alignLeft art-text artwork" id="section-5.4.3-1">
 <pre>
                             The server (recipient Gateway) selects one acceptable credential scheme from
                             the offered schemes, returning the selection in the "Credential Scheme"
@@ -1998,29 +2027,29 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             If no acceptable credential scheme was offered,
                             an HTPP 511 "Network Authentication Required" error
                             is returned in the Action/Response field of the SATP message.
-</pre><a href="#section-5.5.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.4.3-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="client-procedure-sec">
-<section id="section-5.5.4">
+<section id="section-5.4.4">
           <h4 id="name-client-asserts-or-proves-id">
-<a href="#section-5.5.4" class="section-number selfRef">5.5.4. </a><a href="#name-client-asserts-or-proves-id" class="section-name selfRef">Client asserts or proves identity</a>
+<a href="#section-5.4.4" class="section-number selfRef">5.4.4. </a><a href="#name-client-asserts-or-proves-id" class="section-name selfRef">Client asserts or proves identity</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.5.4-1">
+<div class="alignLeft art-text artwork" id="section-5.4.4-1">
 <pre>
                                                             The details of the assertion / verification step are specific to
                             the chosen credential scheme and are out of scope of this document.
-</pre><a href="#section-5.5.4-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.4.4-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="sequence-numbers-sec">
-<section id="section-5.5.5">
+<section id="section-5.4.5">
           <h4 id="name-sequence-numbers-initialize">
-<a href="#section-5.5.5" class="section-number selfRef">5.5.5. </a><a href="#name-sequence-numbers-initialize" class="section-name selfRef">Sequence numbers initialized</a>
+<a href="#section-5.4.5" class="section-number selfRef">5.4.5. </a><a href="#name-sequence-numbers-initialize" class="section-name selfRef">Sequence numbers initialized</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.5.5-1">
+<div class="alignLeft art-text artwork" id="section-5.4.5-1">
 <pre>
                                                      Sequence numbers are used to allow the server to
                             correctly order operations from the client,
@@ -2037,32 +2066,32 @@ svg :is([fill="white"], [fill^="#fff"]) {
                             with each new request.
                             Sequence numbers can be reused for retries in the
                             event of a gateway timeout.
-</pre><a href="#section-5.5.5-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.4.5-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-msg-exchnge-sec">
-<section id="section-5.5.6">
+<section id="section-5.4.6">
           <h4 id="name-messages-can-now-be-exchang">
-<a href="#section-5.5.6" class="section-number selfRef">5.5.6. </a><a href="#name-messages-can-now-be-exchang" class="section-name selfRef">Messages can now be exchanged</a>
+<a href="#section-5.4.6" class="section-number selfRef">5.4.6. </a><a href="#name-messages-can-now-be-exchang" class="section-name selfRef">Messages can now be exchanged</a>
           </h4>
-<div class="alignLeft art-text artwork" id="section-5.5.6-1">
+<div class="alignLeft art-text artwork" id="section-5.4.6-1">
 <pre>
                                                              Handshaking is complete at this point,
                             and the client can send SAT messages to perform actions on resources,
                             which MAY reference the SAT Payload field.
-</pre><a href="#section-5.5.6-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.4.6-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 </section>
 </div>
 <div id="satp-asset-profile-negotiation">
-<section id="section-5.6">
+<section id="section-5.5">
         <h3 id="name-asset-profile-identificatio">
-<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-asset-profile-identificatio" class="section-name selfRef">Asset Profile Identification</a>
+<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-asset-profile-identificatio" class="section-name selfRef">Asset Profile Identification</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.6-1">
+<div class="alignLeft art-text artwork" id="section-5.5-1">
 <pre>
             The client and server must mutually agree as to the asset type or
             profile that is the subject to the current transfer from the client and server.
@@ -2073,16 +2102,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
             Formal specification of asset identification is out of scope of this document.
             Global numbering of digital asset types or profiles is expected to be
             performed by a legally recognized entity.
-</pre><a href="#section-5.6-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.5-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-application-profile-negotiation">
-<section id="section-5.7">
+<section id="section-5.6">
         <h3 id="name-application-profile-negotia">
-<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-application-profile-negotia" class="section-name selfRef">Application Profile Negotiation</a>
+<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-application-profile-negotia" class="section-name selfRef">Application Profile Negotiation</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.7-1">
+<div class="alignLeft art-text artwork" id="section-5.6-1">
 <pre>
             Where an application relies on specific extensions for operation,
             these can be represented in an Application Profile.
@@ -2101,16 +2130,16 @@ svg :is([fill="white"], [fill^="#fff"]) {
 
             This is an intentionally generalized extension mechanism for
             application or vendor specific functionality.
-</pre><a href="#section-5.7-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.6-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="satp-resource-discovery-sec">
-<section id="section-5.8">
+<section id="section-5.7">
         <h3 id="name-discovery-of-digital-asset-">
-<a href="#section-5.8" class="section-number selfRef">5.8. </a><a href="#name-discovery-of-digital-asset-" class="section-name selfRef">Discovery of Digital Asset Resources</a>
+<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-discovery-of-digital-asset-" class="section-name selfRef">Discovery of Digital Asset Resources</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-5.8-1">
+<div class="alignLeft art-text artwork" id="section-5.7-1">
 <pre>
                             Applications located outside a network or system SHOULD be able
             to discover which resources they are authorized to access in a network or system.
@@ -2128,7 +2157,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 
             Formal specification of supported
             resource discovery methods is out of scope of this document.
-</pre><a href="#section-5.8-1" class="pilcrow">¶</a>
+</pre><a href="#section-5.7-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -2503,7 +2532,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </pre><a href="#section-7.6-1" class="pilcrow">¶</a>
 </div>
 <div id="transfer-commence-sec-example">
-<figure id="figure-1">
+<figure id="figure-2">
           <div class="alignLeft art-text artwork" id="section-7.6-2.1">
 <pre>
    POST /token HTTP/1.1
@@ -2529,7 +2558,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 
 </pre>
 </div>
-<figcaption><a href="#figure-1" class="selfRef">Figure 1</a></figcaption></figure>
+<figcaption><a href="#figure-2" class="selfRef">Figure 2</a></figcaption></figure>
 </div>
 </section>
 </div>
@@ -3116,7 +3145,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </pre><a href="#section-11-1" class="pilcrow">¶</a>
 </div>
 <div id="fig-error-format">
-<figure id="figure-2">
+<figure id="figure-3">
         <div class="alignLeft art-text artwork" id="section-11-2.1">
 <pre>
   enum { session_closure(1), nonfatal_error (2) fatal_error(3), (255) } AlertLevel;
@@ -3139,7 +3168,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       } Alert;
 </pre>
 </div>
-<figcaption><a href="#figure-2" class="selfRef">Figure 2</a></figcaption></figure>
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a></figcaption></figure>
 </div>
 <div id="satp-closure-alerts-section">
 <section id="section-11.1">
@@ -3416,19 +3445,19 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Thomas Hardjono</span></div>
-<div dir="auto" class="left"><span class="org">MIT</span></div>
-<div class="email">
-<span>Email:</span>
-<a href="mailto:hardjono@mit.edu" class="email">hardjono@mit.edu</a>
-</div>
-</address>
-<address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Martin Hargreaves</span></div>
 <div dir="auto" class="left"><span class="org">Quant Network</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:martin.hargreaves@quant.network" class="email">martin.hargreaves@quant.network</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Thomas Hardjono</span></div>
+<div dir="auto" class="left"><span class="org">MIT</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:hardjono@mit.edu" class="email">hardjono@mit.edu</a>
 </div>
 </address>
 <address class="vcard">

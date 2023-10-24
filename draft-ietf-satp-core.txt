@@ -2,10 +2,10 @@
 
 
 
-Secure Asset Transfer Protocol                               T. Hardjono
-Internet-Draft                                                       MIT
-Intended status: Informational                             M. Hargreaves
-Expires: 26 April 2024                                     Quant Network
+Secure Asset Transfer Protocol                             M. Hargreaves
+Internet-Draft                                             Quant Network
+Intended status: Informational                               T. Hardjono
+Expires: 26 April 2024                                               MIT
                                                              R. Belchior
                                    INESC-ID, Técnico Lisboa, Blockdaemon
                                                          24 October 2023
@@ -83,31 +83,30 @@ Table of Contents
      4.4.  Types of Flows
      4.5.  Resources and Identifier
    5.  SATP Message Format, identifiers and Descriptors
-     5.1.  Overview
-     5.2.  SATP Message Format
-     5.3.  Digital Asset Resource Descriptors
+     5.1.  SATP Message Format
+     5.2.  Digital Asset Resource Descriptors
+       5.2.1.  Organization Identifier
+       5.2.2.  Gateway / Endpoint ID
+       5.2.3.  Network or system Identifier
+       5.2.4.  Network Resource
+       5.2.5.  Examples
+     5.3.  Digital Asset Resource Client Descriptors
        5.3.1.  Organization Identifier
        5.3.2.  Gateway / Endpoint ID
-       5.3.3.  Network or system Identifier
-       5.3.4.  Network Resource
+       5.3.3.  Organizational Unit
+       5.3.4.  Name
        5.3.5.  Examples
-     5.4.  Digital Asset Resource Client Descriptors
-       5.4.1.  Organization Identifier
-       5.4.2.  Gateway / Endpoint ID
-       5.4.3.  Organizational Unit
-       5.4.4.  Name
-       5.4.5.  Examples
-       5.4.6.  Gateway Level Access Control
-     5.5.  Negotiation of Security Protocols and Parameters
-       5.5.1.  TLS Established
-       5.5.2.  Client offers supported credential schemes
-       5.5.3.  Server selects supported credential scheme
-       5.5.4.  Client asserts or proves identity
-       5.5.5.  Sequence numbers initialized
-       5.5.6.  Messages can now be exchanged
-     5.6.  Asset Profile Identification
-     5.7.  Application Profile Negotiation
-     5.8.  Discovery of Digital Asset Resources
+       5.3.6.  Gateway Level Access Control
+     5.4.  Negotiation of Security Protocols and Parameters
+       5.4.1.  TLS Established
+       5.4.2.  Client offers supported credential schemes
+       5.4.3.  Server selects supported credential scheme
+       5.4.4.  Client asserts or proves identity
+       5.4.5.  Sequence numbers initialized
+       5.4.6.  Messages can now be exchanged
+     5.5.  Asset Profile Identification
+     5.6.  Application Profile Negotiation
+     5.7.  Discovery of Digital Asset Resources
    6.  Identity and Asset Verification Flow (Stage 0)
    7.  Transfer Initiation and Commencement Flows (Stage 1)
      7.1.  Transfer Initialization Claims
@@ -212,26 +211,27 @@ Table of Contents
 
 3.  Terminology
 
-    The following are some terminology used in the current document:
+   The following are some terminology used in the current document:
 
-    * Client application: This is the application employed by a user
-     to interact with a gateway.
+   *  Client application: This is the application employed by a user to
+      interact with a gateway.
 
-     * Gateway: The computer system functionally capable of acting
-    as a gateway in an asset transfer.
+   *  Gateway: The computer system functionally capable of acting as a
+      gateway in an asset transfer.
 
-     * Sender gateway: The gateway that initiates a unidirectional asset transfer.
+   *  Sender gateway: The gateway that initiates a unidirectional asset
+      transfer.
 
-     * Recipient gateway: The gateway that is the recipient side of
-    a unidirectional asset transfer.
+   *  Recipient gateway: The gateway that is the recipient side of a
+      unidirectional asset transfer.
 
-     * Claim: An assertion made by an Entity [JWT].
+   *  Claim: An assertion made by an Entity [JWT].
 
-     * Claim Type: Syntax used for representing a Claim Value [JWT].
+   *  Claim Type: Syntax used for representing a Claim Value [JWT].
 
-     * Gateway Claim: An assertion made by a Gateway regarding the status or
-    condition of resources (e.g. assets, public keys, etc.)
-    accessible to that gateway (e.g. within its network or system).
+   *  Gateway Claim: An assertion made by a Gateway regarding the status
+      or condition of resources (e.g. assets, public keys, etc.)
+      accessible to that gateway (e.g. within its network or system).
 
 4.  The Secure Asset Transfer Protocol
 
@@ -263,9 +263,11 @@ Table of Contents
      |      |   |          | 2  |        | 2  |          |   |      |
      +------+   +----------+----+        +----+----------+   +------+
 
+                                  Figure 1
+
 4.2.  SAT Model
 
-             The model for SATP is shown in Figure 1.
+   The model for SATP is shown in Figure 1.
 
              The Client (application) interacts with its local gateway (G1)
             over an interface (API Type-1) in order to provide instructions
@@ -279,6 +281,8 @@ Table of Contents
             over an off-network interface (API Type-3).
 
 4.3.  Types of APIs
+
+   The following are the types of APIs in SATP:
 
                             * Gateway APIs for client (API Type-1):
                             This the REST APIs that permit a Client (application)
@@ -299,6 +303,8 @@ Table of Contents
 
 4.4.  Types of Flows
 
+   The SAT protocol defines the following three (3) flows:
+
                             * Transfer Initiation flow:
                             This flow deals with commencing a transfer from one gateway to another.
                             Several tasks are involved, including (but not limited to):
@@ -315,7 +321,7 @@ Table of Contents
                             This flow deals with the asset transfer and commitment
                             establishment between two gateways.
 
-    These flow will be discussed below.
+  These flow will be discussed below.
 
 4.5.  Resources and Identifier
 
@@ -337,7 +343,7 @@ Table of Contents
 
 5.  SATP Message Format, identifiers and Descriptors
 
-5.1.  Overview
+   ## Overview
 
               This section describes (i) the phases of SATP;
              (ii) the format of SATP messages; (iii) the format for resource descriptors;
@@ -346,63 +352,66 @@ Table of Contents
             (v) discovery and accessing resources and provisions for
             backward compatibility with existing systems.
 
-5.2.  SATP Message Format
+5.1.  SATP Message Format
 
               SATP messages are exchanged between applications (clients)
              and gateways (servers).
              They consist of protocol negotiation and functional messages.
 
-              Messages are in JSON format, with protocol specific mandatory fields,
+            Messages are in JSON format, with protocol specific mandatory fields,
              support for several authentication and authorization schemes and support
              for a free format field for plaintext or encrypted payloads
              directed at the gateway.
 
-            JSON format message, mandatory fields are shown below:
-                            * Version: SATP protocol Version (major, minor).
+            JSON format message, mandatory fields are shown below: * Version: SATP protocol Version (major, minor).
 
-                            * Message Type: This refers to the type of request or response to be conveyed in this message.
+*  Message Type: This refers to the type of request or response to be
+   conveyed in this message.
 
-    * Session ID: unique identifier (UUIDv2) representing
-                               a session between two gateways handling a single unidirectional transfer.
+*  Session ID: unique identifier (UUIDv2) representing a session
+   between two gateways handling a single unidirectional transfer.
 
-    * Transfer-Context ID: unique optional identifier (UUIDv2)
-                            representing the application layer context.
+*  Transfer-Context ID: unique optional identifier (UUIDv2)
+   representing the application layer context.
 
-    * Sequence Number: Monotonically increasing counter that uniquely represents a message from a session.
+*  Sequence Number: Monotonically increasing counter that uniquely
+   represents a message from a session.
 
-    * Resource URL: Location of Resource to be accessed.
+*  Resource URL: Location of Resource to be accessed.
 
-    * Developer URN: Assertion of developer / application identity.
+*  Developer URN: Assertion of developer / application identity.
 
-    * Action/Response: GET/POST and arguments (or Response Code)
+*  Action/Response: GET/POST and arguments (or Response Code)
 
-    * Credential Profile: Specify type of auth (e.g. SAML, OAuth, X.509)
+*  Credential Profile: Specify type of auth (e.g.  SAML, OAuth,
+   X.509)
 
-    * Credential Block: Credential token, certificate, string
+*  Credential Block: Credential token, certificate, string
 
-    * Payload Profile: Asset profile and capabilities
+*  Payload Profile: Asset profile and capabilities
 
-    * Application Profile: Vendor or Application specific profile
+*  Application Profile: Vendor or Application specific profile
 
-                            Payload: Payload for POST, responses, and local networks.
-                                    The payload is specific to the current SAT phase.
+*  Payload: Payload for POST, responses, and local networks.  The
+   payload is specific to the current SAT phase.
 
-                            Payload Hash: hash of the current message payload.
-                            Message signature: Gateway EDCSA signature over the message
+*  Payload Hash: hash of the current message payload.
 
-            Other relevant attributes may exists that need to be
-            captured for logging purposes.
+*  Message signature: Gateway EDCSA signature over the message
 
-5.3.  Digital Asset Resource Descriptors
+          Other relevant attributes may exists that need to be captured for logging purposes.
+
+5.2.  Digital Asset Resource Descriptors
 
             Resources are identified by URL [RFC1738] as described below:
-                                    * The type is new: application/satres
 
-                                    * The access protocol is SATP.
+   *  The type is new: application/satres
 
-            Data included in the URL includes the folowing:
+   *  The access protocol is SATP.
 
-5.3.1.  Organization Identifier
+                Data included in the URL includes the folowing:
+
+5.2.1.  Organization Identifier
 
                               This MAY be a Legal Entity Identifier (LEI) or other
                              identifier linking resource ownership to a real world entity.
@@ -418,12 +427,12 @@ Table of Contents
                             The mechanisms to determine organizations identifiers
                             is out of scope for the current specification.
 
-5.3.2.  Gateway / Endpoint ID
+5.2.2.  Gateway / Endpoint ID
 
                     FQDN of the SATP compliant gateway. Required to establish IP connectivity.
                             This MUST resolve to a valid IP address.
 
-5.3.3.  Network or system Identifier
+5.2.3.  Network or system Identifier
 
                              Specific to the gateway behind which the target network operates.
                             This field is local to the gateway and is used to direct
@@ -432,7 +441,7 @@ Table of Contents
 
                              For example: "tradelens-network", "EU-supply-chain".
 
-5.3.4.  Network Resource
+5.2.4.  Network Resource
 
                              Specifies a resource held on the underlying network.
                             This field must be meaningful to the network in question
@@ -441,11 +450,11 @@ Table of Contents
                             data block, transaction ID, alias, etc. or
                             a future object type not yet defined.
 
-5.3.5.  Examples
+5.2.5.  Examples
 
                                satpres://quant/api.gateway1.com/swift
 
-5.4.  Digital Asset Resource Client Descriptors
+5.3.  Digital Asset Resource Client Descriptors
 
             Resources are identified by URN as described below:
 
@@ -455,7 +464,7 @@ Table of Contents
 
             Data included in the URN includes the following:
 
-5.4.1.  Organization Identifier
+5.3.1.  Organization Identifier
 
                              Legal Entity Identifier (LEI) or other identifier
                             linking resource ownership to a real-world entity.
@@ -467,7 +476,7 @@ Table of Contents
                             but MAY be relied on where trust has been established
                             between the two parties (e.g. in a closed user group).
 
-5.4.2.  Gateway / Endpoint ID
+5.3.2.  Gateway / Endpoint ID
 
                              Applications which interact with multiple networks
                             can operate in a mode whereby the application connects to its local gateway,
@@ -480,7 +489,7 @@ Table of Contents
                              and protocol negotiation, or for the server to look up use
                              case specific data relating to the client.
 
-5.4.3.  Organizational Unit
+5.3.3.  Organizational Unit
 
                              The organization unit within the organization that the client
                             (application or developer) belongs to.
@@ -492,7 +501,7 @@ Table of Contents
                             supporting future changes and supporting counterparties
                             that operate different schemes.
 
-5.4.4.  Name
+5.3.4.  Name
 
                             A locally unique (within the OU) identifier, which can identify the application,
                             project or individual developer responsible for this client connection.
@@ -500,11 +509,11 @@ Table of Contents
                             and gateways should ensure appropriate identifiers
                             are used for the needs of the application or use case.
 
-5.4.5.  Examples
+5.3.5.  Examples
 
                             satclient:quant/api.overledger.quant.com/research/luke.riley
 
-5.4.6.  Gateway Level Access Control
+5.3.6.  Gateway Level Access Control
 
             Gateways can enforce access rules based on standard naming conventions using
             novel or existing mechanisms such as AuthZ protocols using
@@ -529,15 +538,15 @@ Table of Contents
             including subsetting and supersetting or applications or
             resources according to their own requirements.
 
-5.5.  Negotiation of Security Protocols and Parameters
+5.4.  Negotiation of Security Protocols and Parameters
 
-5.5.1.  TLS Established
+5.4.1.  TLS Established
 
    TLS 1.2 or higher MUST be implemented to protect gateway
    communications.  TLS 1.3 or higher SHOULD be implemented where both
    gateways support TLS 1.3 or higher.
 
-5.5.2.  Client offers supported credential schemes
+5.4.2.  Client offers supported credential schemes
 
                             Capability negotiation prior to data exchange,
                             follows a scheme similar to the Session Description Protocol [RFC 5939].
@@ -545,7 +554,7 @@ Table of Contents
                             acceptable credential schemes, e.g. OAuth2.0, SAML in
                             the "Credential Scheme" field of the SATP message.
 
-5.5.3.  Server selects supported credential scheme
+5.4.3.  Server selects supported credential scheme
 
                             The server (recipient Gateway) selects one acceptable credential scheme from
                             the offered schemes, returning the selection in the "Credential Scheme"
@@ -555,12 +564,12 @@ Table of Contents
                             an HTPP 511 "Network Authentication Required" error
                             is returned in the Action/Response field of the SATP message.
 
-5.5.4.  Client asserts or proves identity
+5.4.4.  Client asserts or proves identity
 
                                                             The details of the assertion / verification step are specific to
                             the chosen credential scheme and are out of scope of this document.
 
-5.5.5.  Sequence numbers initialized
+5.4.5.  Sequence numbers initialized
 
                                                      Sequence numbers are used to allow the server to
                             correctly order operations from the client,
@@ -578,13 +587,13 @@ Table of Contents
                             Sequence numbers can be reused for retries in the
                             event of a gateway timeout.
 
-5.5.6.  Messages can now be exchanged
+5.4.6.  Messages can now be exchanged
 
                                                              Handshaking is complete at this point,
                             and the client can send SAT messages to perform actions on resources,
                             which MAY reference the SAT Payload field.
 
-5.6.  Asset Profile Identification
+5.5.  Asset Profile Identification
 
             The client and server must mutually agree as to the asset type or
             profile that is the subject to the current transfer from the client and server.
@@ -596,7 +605,7 @@ Table of Contents
             Global numbering of digital asset types or profiles is expected to be
             performed by a legally recognized entity.
 
-5.7.  Application Profile Negotiation
+5.6.  Application Profile Negotiation
 
             Where an application relies on specific extensions for operation,
             these can be represented in an Application Profile.
@@ -616,7 +625,7 @@ Table of Contents
             This is an intentionally generalized extension mechanism for
             application or vendor specific functionality.
 
-5.8.  Discovery of Digital Asset Resources
+5.7.  Discovery of Digital Asset Resources
 
                             Applications located outside a network or system SHOULD be able
             to discover which resources they are authorized to access in a network or system.
@@ -963,7 +972,7 @@ Table of Contents
           "client_signature":"fdw34567uyhgfer45"
           }
 
-                                Figure 1
+                                Figure 2
 
 7.7.  Commence Response Message (ACK-Commence)
 
@@ -1454,7 +1463,7 @@ Table of Contents
           AlertDescription description;
       } Alert;
 
-                               Figure 2
+                               Figure 3
 
 11.1.  Closure Alerts
 
@@ -1614,14 +1623,14 @@ Table of Contents
 
 Authors' Addresses
 
-   Thomas Hardjono
-   MIT
-   Email: hardjono@mit.edu
-
-
    Martin Hargreaves
    Quant Network
    Email: martin.hargreaves@quant.network
+
+
+   Thomas Hardjono
+   MIT
+   Email: hardjono@mit.edu
 
 
    Rafael Belchior
