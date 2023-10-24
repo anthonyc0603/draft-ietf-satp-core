@@ -237,14 +237,13 @@ Table of Contents
 
 4.1.  Overview
 
-     The Secure Asset Transfer Protocol (SATP) is a gateway-to-gateway protocol
-    used by a sender gateway with a recipient gateway to perform
-    a unidirectional transfer of a digital asset.
+   The Secure Asset Transfer Protocol (SATP) is a gateway-to-gateway
+   protocol used by a sender gateway with a recipient gateway to perform
+   a unidirectional transfer of a digital asset.
 
-     The protocol defines a number of API endpoints,
-    resources and identifier definitions,
-    and message flows corresponding to the asset transfer
-    between the two gateways.
+   The protocol defines a number of API endpoints,resources and
+   identifier definitions, and message flows corresponding to the asset
+   transfer between the two gateways.
 
                 +----------+                +----------+
                 |  Client  |                | Off-net  |
@@ -269,10 +268,10 @@ Table of Contents
 
    The model for SATP is shown in Figure 1.
 
-     The Client (application) interacts with its local gateway (G1)
-    over an interface (API Type-1) in order to provide instructions
-    to the gateway with regards to actions to assets and related
-    resources located in the local system or network (NW1).
+   The Client (application) interacts with its local gateway (G1) over
+   an interface (API Type-1) in order to provide instructions to the
+   gateway with regards to actions to assets and related resources
+   located in the local system or network (NW1).
 
      Gateways interact with each other over a gateway interface (API Type- 2).
     A given gateway may be required to access resources that are
