@@ -120,7 +120,7 @@ Table of Contents
    8.  Lock Assertion and Receipt (Stage 2)
      8.1.  Lock Assertion Message
      8.2.  Lock Assertion Receipt Message
-   9.  Commitment Preparation and Finalization(Stage 3)
+   9.  Commitment Preparation and Finalization (Stage 3)
      9.1.  Commit Preparation Message (Commit-Prepare)
      9.2.  Commit Ready Message (Commit-Ready)
      9.3.  Commit Final Assertion Message (Commit-Final)
@@ -692,18 +692,18 @@ Table of Contents
 
    The Transfer Initialization Claims consists of the following:
 
-   *  digital_asset_id:This is the globally unique identifier for the
+   *  digital_asset_id: This is the globally unique identifier for the
       digital asset located in the origin network.
 
-   *  asset_profile_id:This is the globally unique identifier for the
+   *  asset_profile_id: This is the globally unique identifier for the
       asset-profile definition (document) on which the digital asset was
       issued.
 
-   *  verified_originator_entity_id:This is the identity data of the
+   *  verified_originator_entity_id: This is the identity data of the
       originator entity (person or organization) in the origin network.
       This information must be verified by the sender gateway.
 
-   *  verified_beneficiary_entity_id:This is the identity data of the
+   *  verified_beneficiary_entity_id: This is the identity data of the
       beneficiary entity (person or organization) in the destination
       network.  This information must be verified by the receiver
       gateway.
@@ -726,10 +726,10 @@ Table of Contents
    *  server_identity_pubkey REQUIRED.  The public key of server for
       whom this message is intended.
 
-   *  sender_gateway_owner_id:This is the identity information of the
+   *  sender_gateway_owner_id: This is the identity information of the
       owner or operator of the sender gateway.
 
-   *  receiver_gateway_owner_id:This is the identity information of the
+   *  receiver_gateway_owner_id: This is the identity information of the
       owner or operator of the recipient gateway.
 
 7.2.  Conveyance of Network Capabilities and Parameters
@@ -767,17 +767,17 @@ Table of Contents
    *  developer_URN OPTIONAL: Assertion of developer / application
       identity.
 
-   *  credential_profile REQUIRED: Specify type of auth (e.g.SAML,
+   *  credential_profile REQUIRED: Specify type of auth (e.g., SAML,
       OAuth, X.509).
 
    *  application_profile OPTIONAL: Vendor or Application specific
       profile.
 
    *  logging_profile REQUIRED: contains the profile regarding the
-      logging procedure.Default is local store
+      logging procedure.  Default is local store
 
    *  Access_control_profile REQUIRED: the profile regarding the
-      confidentiality of the log entries being stored.Default is only
+      confidentiality of the log entries being stored.  Default is only
       the gateway that created the logs can access them.
 
    *  Subsequent calls OPTIONAL: details possible escrow actions.
@@ -801,9 +801,9 @@ Table of Contents
 
    *  version REQUIRED: SAT protocol Version (major, minor).
 
-   *  message_type REQUIRED:urn:ietf:satp:msgtype:init-proposal-msg.
+   *  message_type REQUIRED: urn:ietf:satp:msgtype:init-proposal-msg.
 
-   *  session_idREQUIRED: A unique identifier (UUIDv2) chosen by the
+   *  session_id REQUIRED: A unique identifier (UUIDv2) chosen by the
       client to identify the current session.
 
    *  transferContext_id OPTIONAL: An optional identifier (UUIDv2) used
@@ -846,9 +846,9 @@ Table of Contents
 
    *  version REQUIRED: SAT protocol Version (major, minor).
 
-   *  message_type REQUIRED:urn:ietf:satp:msgtype:init-receipt-msg
+   *  message_type REQUIRED: urn:ietf:satp:msgtype:init-receipt-msg
 
-   *  session_idREQUIRED: A unique identifier (UUIDv2) chosen by the
+   *  session_id REQUIRED: A unique identifier (UUIDv2) chosen by the
       client to identify the current session.
 
    *  transferContext_id OPTIONAL: An optional identifier (UUIDv2) used
@@ -857,8 +857,8 @@ Table of Contents
    *  hash_transfer_init_claims REQUIRED: Hash of the Transfer
       Initialization Claims received in the Transfer Proposal Message.
 
-   -Timestamp REQUIRED: timestamp referring to when the Initialization
-   Request Message was received.
+   *  Timestamp REQUIRED: timestamp referring to when the Initialization
+      Request Message was received.
 
    Example: TBD.
 
@@ -887,9 +887,9 @@ Table of Contents
 
    *  version REQUIRED: SAT protocol Version (major, minor).
 
-   *  message_type REQUIRED:urn:ietf:satp:msgtype:init-reject-msg
+   *  message_type REQUIRED: rn:ietf:satp:msgtype:init-reject-msg
 
-   *  session_idREQUIRED: A unique identifier (UUIDv2) chosen by the
+   *  session_id REQUIRED: A unique identifier (UUIDv2) chosen by the
       client to identify the current session.
 
    *  transferContext_id OPTIONAL: An optional identifier (UUIDv2) used
@@ -1071,7 +1071,7 @@ Table of Contents
 
    *  lock_assertion_claim_format REQUIRED.  The format of the claim.
 
-   *  lock_assertion_expiration REQUIRED.The duration of time of the
+   *  lock_assertion_expiration REQUIRED.  The duration of time of the
       lock or escrow upon the asset.
 
    *  hash_prev_message REQUIRED.  The hash of the previous message.
@@ -1117,7 +1117,7 @@ Table of Contents
 
    *  server_signature REQUIRED.  The digital signature of the server.
 
-9.  Commitment Preparation and Finalization(Stage 3)
+9.  Commitment Preparation and Finalization (Stage 3)
 
    This section describes the transfer commitment agreement between the
    client (sender gateway) and the server (receiver gateway).
@@ -1213,7 +1213,7 @@ Table of Contents
    *  mint_assertion_claims REQUIRED.  The mint assertion claim or
       statement by the server.
 
-   *  mint_assertion_format OPTIONAL.The format of the assertion
+   *  mint_assertion_format OPTIONAL.  The format of the assertion
       payload.
 
    *  hash_prev_message REQUIRED.  The hash of previous message.
@@ -1259,7 +1259,7 @@ Table of Contents
    *  burn_assertion_claim REQUIRED.  The burn assertion signed claim or
       statement by the client.
 
-   *  burn_assertion_claim_format OPTIONAL.The format of the claim.
+   *  burn_assertion_claim_format OPTIONAL.  The format of the claim.
 
    *  hash_prev_message REQUIRED.  The hash of previous message.
 
@@ -1301,7 +1301,7 @@ Table of Contents
       the server that the asset has been assigned by the server to the
       intended beneficiary.
 
-   *  assignment_assertion_claim_format OPTIONAL.The format of the
+   *  assignment_assertion_claim_format OPTIONAL.  The format of the
       claim.
 
    *  hash_prev_message REQUIRED.  The hash of previous message.
@@ -1494,12 +1494,12 @@ struct {
    The SATP client and server (gateways) must share knowledge that the
    transfer connection is ending in order to avoid third party attacks.
 
-   (a) close_notify:This alert notifies the recipient that the sender
+   (a) close_notify: This alert notifies the recipient that the sender
    gateway will not send any more messages on this transfer connection.
    Any data received after a closure alert has been received MUST be
    ignored.
 
-   (b) user_canceled:This alert notifies the recipient that the sender
+   (b) user_canceled: This alert notifies the recipient that the sender
    gateway is canceling the transfer connection for some reason
    unrelated to a protocol failure.
 
@@ -1520,12 +1520,12 @@ struct {
       establishment (TLS error codes should be reported-up to gateway
       level)
 
-   *  bad_certificate:The gateway certificate was corrupt, contained
+   *  bad_certificate: The gateway certificate was corrupt, contained
       signatures, that did not verify correctly, etc.  (Some common TLS
       level errors: unsupported_certificate, certificate_revoked,
       certificate_expired, certificate_unknown, unknown_ca).
 
-   *  protocol_version_error:The SATP protocol version the peer has
+   *  protocol_version_error: The SATP protocol version the peer has
       attempted to negotiate is recognized but not supported.
 
    *  (Others TBD)
@@ -1613,27 +1613,44 @@ struct {
 14.5.  Commit Preparation Acknowledgement errors
 
    The following are the list of errors related to Commit Preparation
-   Acknowledgement: - [err_3.2.1] Badly formed message: wrong
-   transaction ID.  - [err_3.2.2] Badly formed message: mismatch hash
-   value.  - [err_3.2.3] Incorrect parameter.  - [err_3.2.4] Message out
-   of sequence.
+   Acknowledgement:
+
+   *  [err_3.2.1] Badly formed message: wrong transaction ID.
+
+   *  [err_3.2.2] Badly formed message: mismatch hash value.
+
+   *  [err_3.2.3] Incorrect parameter.
+
+   *  [err_3.2.4] Message out of sequence.
 
 14.6.  Commit Ready errors
 
-   The following are the list of errors related to Commit Ready: -
-   [err_3.4.1] Badly formed message: wrong transaction ID.  -
-   [err_3.4.2] Badly formed message: mismatch hash value.  - [err_3.4.3]
-   Incorrect parameter.  - [err_3.4.4] Message out of sequence (ACK
-   mismatch).
+   The following are the list of errors related to Commit Ready:
+
+   *  [err_3.4.1] Badly formed message: wrong transaction ID.
+
+   *  [err_3.4.2] Badly formed message: mismatch hash value.
+
+   *  [err_3.4.3] Incorrect parameter.
+
+   *  [err_3.4.4] Message out of sequence (ACK mismatch).
 
 14.7.  Commit Final Assertion errors
 
    The following are the list of errors related to Commit Final
-   Assertion: - [err_3.6.1] Badly formed message: badly formed Claim.  -
-   [err_3.6.2] Badly formed message: bad signature.  - [err_3.6.3] Badly
-   formed message: wrong transaction ID.  - [err_3.6.4] Badly formed
-   message: Mismatch hash values.  - [err_3.6.5] Expired signing-key
-   certificate.  - [err_3.6.6] Expired Claim.
+   Assertion:
+
+   *  [err_3.6.1] Badly formed message: badly formed Claim.
+
+   *  [err_3.6.2] Badly formed message: bad signature.
+
+   *  [err_3.6.3] Badly formed message: wrong transaction ID.
+
+   *  [err_3.6.4] Badly formed message: Mismatch hash values.
+
+   *  [err_3.6.5] Expired signing-key certificate.
+
+   *  [err_3.6.6] Expired Claim.
 
 15.  References
 
