@@ -204,7 +204,7 @@ Table of Contents
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [RFC2119].
+   document are to be interpreted as described in RFC 2119 [@!RFC2119].
 
    In this document, these words will appear with that interpretation
    only when in ALL CAPS.  Lower case uses of these words are not to be
@@ -246,22 +246,22 @@ Table of Contents
    identifier definitions, and message flows corresponding to the asset
    transfer between the two gateways.
 
-   +----------++----------+
-   |Client|| Off-net|
-   | (App)|| Resource |
-   +----------++----------+
-   ||API Type-3|
-   |+----------+
-   |^
-   V|
-   +----------+ |
-   |API Type-1| |
-   +------+ +----------+----+ +----+----------+ +------+
-   || | || || | ||
-   | Net. | | Gateway|API | |API | Gateway| | Net. |
-   | NW1|---|G1|Type|<------>|Type|G2|---| NW2|
-   || | | 2| | 2| | ||
-   +------+ +----------+----+ +----+----------+ +------+
+                +----------+                +----------+
+                |  Client  |                | Off-net  |
+                |   (App)  |                | Resource |
+                +----------+                +----------+
+                     |                      |API Type-3|
+                     |                      +----------+
+                     |                           ^
+                     V                           |
+                +----------+                     |
+                |API Type-1|                     |
+     +------+   +----------+----+        +----+----------+   +------+
+     |      |   |          |    |        |    |          |   |      |
+     | Net. |   | Gateway  |API |        |API | Gateway  |   | Net. |
+     | NW1  |---|    G1    |Type|<------>|Type|    G2    |---| NW2  |
+     |      |   |          | 2  |        | 2  |          |   |      |
+     +------+   +----------+----+        +----+----------+   +------+
 
                                   Figure 1
 
@@ -1655,10 +1655,6 @@ struct {
 15.  References
 
 15.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC2234]  Crocker, D. and P. Overell, "Augmented BNF for Syntax
               Specifications ABNF", November 1997,
