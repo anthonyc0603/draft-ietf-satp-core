@@ -5,10 +5,10 @@
 Secure Asset Transfer Protocol                             M. Hargreaves
 Internet-Draft                                             Quant Network
 Intended status: Informational                               T. Hardjono
-Expires: 26 April 2024                                               MIT
+Expires: 27 April 2024                                               MIT
                                                              R. Belchior
                                    INESC-ID, Técnico Lisboa, Blockdaemon
-                                                         24 October 2023
+                                                         25 October 2023
 
 
                Secure Asset Transfer Protocol (SATP) Core
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 April 2024.
+   This Internet-Draft will expire on 27 April 2024.
 
 Copyright Notice
 
@@ -266,18 +266,15 @@ Table of Contents
 
 4.2.  SAT Model
 
-   The model for SATP is shown in Figure 1.
-
-   The Client (application) interacts with its local gateway (G1) over
-   an interface (API Type-1) in order to provide instructions to the
-   gateway with regards to actions to assets and related resources
-   located in the local system or network (NW1).
-
-     Gateways interact with each other over a gateway interface (API Type- 2).
-    A given gateway may be required to access resources that are
-    not located in network NW1 or network NW2.
-    Access to these types of resources are performed
-    over an off-network interface (API Type-3).
+   The model for SATP is shown in Figure 1.  The model for SATP is shown
+   in Figure 1.  The Client (application) interacts with its local
+   gateway (G1) over an interface (API Type-1) in order to provide
+   instructions to the gateway with regards to actions to assets and
+   related resources located in the local system or network (NW1).
+   Gateways interact with each other over a gateway interface (API Type-
+   2).  A given gateway may be required to access resources that are not
+   located in network NW1 or network NW2.  Access to these types of
+   resources are performed over an off-network interface (API Type-3).
 
 4.3.  Types of APIs
 
