@@ -1431,7 +1431,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-2-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL"
-in this document are to be interpreted as described in RFC 2119 [@RFC2119].<a href="#section-2-1" class="pilcrow">¶</a></p>
+in this document are to be interpreted as described in RFC 2119 <span>[<a href="#REQ-LEVEL" class="cite xref">REQ-LEVEL</a>]</span>.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">In this document, these words will appear with that interpretation
 only when in ALL CAPS. Lower case uses of these words are not to be
 interpreted as carrying significance described in RFC 2119.<a href="#section-2-2" class="pilcrow">¶</a></p>
@@ -1460,10 +1460,10 @@ interpreted as carrying significance described in RFC 2119.<a href="#section-2-2
  a unidirectional asset transfer.<a href="#section-3-2.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-3-2.5">
-          <p id="section-3-2.5.1">Claim: An assertion made by an Entity <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span>.<a href="#section-3-2.5.1" class="pilcrow">¶</a></p>
+          <p id="section-3-2.5.1">Claim: An assertion made by an Entity <span>[<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-3-2.5.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-3-2.6">
-          <p id="section-3-2.6.1">Claim Type: Syntax used for representing a Claim Value <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span>.<a href="#section-3-2.6.1" class="pilcrow">¶</a></p>
+          <p id="section-3-2.6.1">Claim Type: Syntax used for representing a Claim Value <span>[<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-3-2.6.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-3-2.7">
           <p id="section-3-2.7.1">Gateway Claim: An assertion made by a Gateway regarding the status or
@@ -2740,7 +2740,7 @@ meaning that the crashed gateway will eventually be replaced
 by a functioning one, or recover, respectively.<a href="#section-10-3" class="pilcrow">¶</a></p>
 <p id="section-10-4">When a crash occurs, we initiate a recovery procedure by
 the backup gateway or the recovered gateway, as defined in the
-crash recovery draft <span>[<a href="#draft-belchior-satp-gateway-recovery-00" class="cite xref">draft-belchior-satp-gateway-recovery-00</a>]</span>.
+crash recovery draft <span>[<a href="#I-D.draft-belchior-satp-gateway-recovery" class="cite xref">I-D.draft-belchior-satp-gateway-recovery</a>]</span>.
 In either case, if the recovery happenswithin a time period defined as max_timeout (in Stage 2), the recovered gateway triggers a session resumption.
 The schema and order of the recovered messages is specified in the crash recovery draft.<a href="#section-10-4" class="pilcrow">¶</a></p>
 <p id="section-10-5">In the case where there is no answer from the gateway within the specified max_timeout,
@@ -2781,7 +2781,7 @@ we focus on the primary-backup paradigm.<a href="#section-10-7" class="pilcrow">
 <a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-recovery-messages" class="section-name selfRef">Recovery Messages</a>
         </h3>
 <p id="section-10.2-1">We have omitted the logging procedure (only focusing the different messages).
- As defined in the crash recovery draft <span>[<a href="#draft-belchior-satp-gateway-recovery-00" class="cite xref">draft-belchior-satp-gateway-recovery-00</a>]</span>,
+ As defined in the crash recovery draft <span>[<a href="#I-D.draft-belchior-satp-gateway-recovery" class="cite xref">I-D.draft-belchior-satp-gateway-recovery</a>]</span>,
  there are a set of messages that are exchanged between the recovered
  gateway and counterparty gateway:<a href="#section-10.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2959,13 +2959,13 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.1-1">The following are the list of errors related to Transfer Commence and Response:<a href="#section-14.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.1-2.1">
-            <p id="section-14.1-2.1.1">[err_2.1] Badly formed message.<a href="#section-14.1-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.1-2.1.1">err_2.1: Badly formed message.<a href="#section-14.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.1-2.2">
-            <p id="section-14.1-2.2.1">[err_2.2] Incorrect parameter.<a href="#section-14.1-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.1-2.2.1">err_2.2: Incorrect parameter.<a href="#section-14.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.1-2.3">
-            <p id="section-14.1-2.3.1">[err_2.3] ACK mismatch.<a href="#section-14.1-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.1-2.3.1">err_2.3: ACK mismatch.<a href="#section-14.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2978,22 +2978,22 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.2-1">The following are the list of errors related to Lock Assertion:<a href="#section-14.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.2-2.1">
-            <p id="section-14.2-2.1.1">[err_2.4.1] Badly formed message: badly formed Claim.<a href="#section-14.2-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.1.1">err_2.4.1: Badly formed message: badly formed Claim.<a href="#section-14.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.2-2.2">
-            <p id="section-14.2-2.2.1">[err_2.4.2] Badly formed message: bad signature.<a href="#section-14.2-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.2.1">err_2.4.2: Badly formed message: bad signature.<a href="#section-14.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.2-2.3">
-            <p id="section-14.2-2.3.1">[err_2.4.3] Badly formed message: wrong transaction ID.<a href="#section-14.2-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.3.1">err_2.4.3: Badly formed message: wrong transaction ID.<a href="#section-14.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.2-2.4">
-            <p id="section-14.2-2.4.1">[err_2.4.4] Badly formed message: Mismatch hash values.<a href="#section-14.2-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.4.1">err_2.4.4: Badly formed message: Mismatch hash values.<a href="#section-14.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.2-2.5">
-            <p id="section-14.2-2.5.1">[err_2.4.5] Expired signing-key certificate.<a href="#section-14.2-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.5.1">err_2.4.5: Expired signing-key certificate.<a href="#section-14.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.2-2.6">
-            <p id="section-14.2-2.6.1">[err_2.4.6] Expired Claim.<a href="#section-14.2-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-14.2-2.6.1">err_2.4.6: Expired Claim.<a href="#section-14.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3006,22 +3006,22 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.3-1">The following are the list of errors related to Lock Assertion Receipt:<a href="#section-14.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.3-2.1">
-            <p id="section-14.3-2.1.1">[err_2.6.1] Badly formed message: badly formed Claim.<a href="#section-14.3-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.1.1">err_2.6.1: Badly formed message: badly formed Claim.<a href="#section-14.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.3-2.2">
-            <p id="section-14.3-2.2.1">[err_2.6.2] Badly formed message: bad signature.<a href="#section-14.3-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.2.1">err_2.6.2: Badly formed message: bad signature.<a href="#section-14.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.3-2.3">
-            <p id="section-14.3-2.3.1">[err_2.6.3] Badly formed message: wrong transaction ID.<a href="#section-14.3-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.3.1">err_2.6.3: Badly formed message: wrong transaction ID.<a href="#section-14.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.3-2.4">
-            <p id="section-14.3-2.4.1">[err_2.6.4] Badly formed message: Mismatch hash values.<a href="#section-14.3-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.4.1">err_2.6.4: Badly formed message: Mismatch hash values.<a href="#section-14.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.3-2.5">
-            <p id="section-14.3-2.5.1">[err_2.6.5] Expired signing-key certificate.<a href="#section-14.3-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.5.1">err_2.6.5: Expired signing-key certificate.<a href="#section-14.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.3-2.6">
-            <p id="section-14.3-2.6.1">[err_2.6.6] Expired Claim.<a href="#section-14.3-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-14.3-2.6.1">err_2.6.6: Expired Claim.<a href="#section-14.3-2.6.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3034,16 +3034,16 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.4-1">The following are the list of errors related to Commit Preparation:<a href="#section-14.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.4-2.1">
-            <p id="section-14.4-2.1.1">[err_3.1.1] Badly formed message: wrong transaction ID.<a href="#section-14.4-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.4-2.1.1">err_3.1.1: Badly formed message: wrong transaction ID.<a href="#section-14.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.4-2.2">
-            <p id="section-14.4-2.2.1">[err_3.1.2] Badly formed message: mismatch hash value (i.e. from msg 2.6).<a href="#section-14.4-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.4-2.2.1">err_3.1.2: Badly formed message: mismatch hash value (i.e. from msg 2.6).<a href="#section-14.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.4-2.3">
-            <p id="section-14.4-2.3.1">[err_3.1.3] Incorrect parameter.<a href="#section-14.4-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.4-2.3.1">err_3.1.3: Incorrect parameter.<a href="#section-14.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.4-2.4">
-            <p id="section-14.4-2.4.1">[err_3.1.4] Message out of sequence.<a href="#section-14.4-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.4-2.4.1">err_3.1.4: Message out of sequence.<a href="#section-14.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3056,16 +3056,16 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.5-1">The following are the list of errors related to Commit Preparation Acknowledgement:<a href="#section-14.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.5-2.1">
-            <p id="section-14.5-2.1.1">[err_3.2.1] Badly formed message: wrong transaction ID.<a href="#section-14.5-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.5-2.1.1">err_3.2.1: Badly formed message: wrong transaction ID.<a href="#section-14.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.5-2.2">
-            <p id="section-14.5-2.2.1">[err_3.2.2] Badly formed message: mismatch hash value.<a href="#section-14.5-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.5-2.2.1">err_3.2.2: Badly formed message: mismatch hash value.<a href="#section-14.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.5-2.3">
-            <p id="section-14.5-2.3.1">[err_3.2.3] Incorrect parameter.<a href="#section-14.5-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.5-2.3.1">err_3.2.3: Incorrect parameter.<a href="#section-14.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.5-2.4">
-            <p id="section-14.5-2.4.1">[err_3.2.4] Message out of sequence.<a href="#section-14.5-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.5-2.4.1">err_3.2.4: Message out of sequence.<a href="#section-14.5-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3078,16 +3078,16 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.6-1">The following are the list of errors related to Commit Ready:<a href="#section-14.6-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.6-2.1">
-            <p id="section-14.6-2.1.1">[err_3.4.1] Badly formed message: wrong transaction ID.<a href="#section-14.6-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.6-2.1.1">err_3.4.1: Badly formed message: wrong transaction ID.<a href="#section-14.6-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.6-2.2">
-            <p id="section-14.6-2.2.1">[err_3.4.2] Badly formed message: mismatch hash value.<a href="#section-14.6-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.6-2.2.1">err_3.4.2: Badly formed message: mismatch hash value.<a href="#section-14.6-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.6-2.3">
-            <p id="section-14.6-2.3.1">[err_3.4.3] Incorrect parameter.<a href="#section-14.6-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.6-2.3.1">err_3.4.3: Incorrect parameter.<a href="#section-14.6-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.6-2.4">
-            <p id="section-14.6-2.4.1">[err_3.4.4] Message out of sequence (ACK mismatch).<a href="#section-14.6-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.6-2.4.1">err_3.4.4: Message out of sequence (ACK mismatch).<a href="#section-14.6-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3100,22 +3100,22 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <p id="section-14.7-1">The following are the list of errors related to Commit Final Assertion:<a href="#section-14.7-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-14.7-2.1">
-            <p id="section-14.7-2.1.1">[err_3.6.1] Badly formed message: badly formed Claim.<a href="#section-14.7-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.1.1">err_3.6.1: Badly formed message: badly formed Claim.<a href="#section-14.7-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.7-2.2">
-            <p id="section-14.7-2.2.1">[err_3.6.2] Badly formed message: bad signature.<a href="#section-14.7-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.2.1">err_3.6.2: Badly formed message: bad signature.<a href="#section-14.7-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.7-2.3">
-            <p id="section-14.7-2.3.1">[err_3.6.3] Badly formed message: wrong transaction ID.<a href="#section-14.7-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.3.1">err_3.6.3: Badly formed message: wrong transaction ID.<a href="#section-14.7-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.7-2.4">
-            <p id="section-14.7-2.4.1">[err_3.6.4] Badly formed message: Mismatch hash values.<a href="#section-14.7-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.4.1">err_3.6.4: Badly formed message: Mismatch hash values.<a href="#section-14.7-2.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.7-2.5">
-            <p id="section-14.7-2.5.1">[err_3.6.5] Expired signing-key certificate.<a href="#section-14.7-2.5.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.5.1">err_3.6.5: Expired signing-key certificate.<a href="#section-14.7-2.5.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.7-2.6">
-            <p id="section-14.7-2.6.1">[err_3.6.6] Expired Claim.<a href="#section-14.7-2.6.1" class="pilcrow">¶</a></p>
+            <p id="section-14.7-2.6.1">err_3.6.6: Expired Claim.<a href="#section-14.7-2.6.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3132,9 +3132,13 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <a href="#section-15.1" class="section-number selfRef">15.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC7519">[RFC7519]</dt>
+<dt id="JWT">[JWT]</dt>
+        <dd>
+<span class="refAuthor">Jones, M.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Sakimura</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <span class="seriesInfo">RFC 7519</span>, <span class="seriesInfo">DOI 10.17487/RFC7519</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7519">https://www.rfc-editor.org/rfc/rfc7519</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="REQ-LEVEL">[REQ-LEVEL]</dt>
       <dd>
-<span class="refAuthor">Jones, M.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Sakimura</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7519">https://www.rfc-editor.org/info/rfc7519</a>&gt;</span>. </dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -3145,9 +3149,9 @@ should be considered for implementations of gateways.<a href="#section-12-2" cla
 <a href="#section-15.2" class="section-number selfRef">15.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="draft-belchior-satp-gateway-recovery-00">[draft-belchior-satp-gateway-recovery-00]</dt>
+<dt id="I-D.draft-belchior-satp-gateway-recovery">[I-D.draft-belchior-satp-gateway-recovery]</dt>
         <dd>
-<span class="refAuthor">Belchior, R.</span>, <span class="refAuthor">Correia, M.</span>, <span class="refAuthor">Augusto, A.</span>, and <span class="refAuthor">T. Hardjono</span>, <span class="refTitle">"SATP Gateway Crash Recovery Mechanism"</span>, <time datetime="2023-07" class="refDate">July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/draft-belchior-satp-gateway-recovery/.">https://datatracker.ietf.org/doc/draft-belchior-satp-gateway-recovery/.</a>&gt;</span>. </dd>
+<span class="refAuthor">Belchior, R.</span>, <span class="refAuthor">Correia, M.</span>, <span class="refAuthor">Augusto, A.</span>, and <span class="refAuthor">T. Hardjono</span>, <span class="refTitle">"SATP Gateway Crash Recovery Mechanism"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-belchior-satp-gateway-recovery-00</span>, <time datetime="2023-07-06" class="refDate">6 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-belchior-satp-gateway-recovery-00">https://datatracker.ietf.org/doc/html/draft-belchior-satp-gateway-recovery-00</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="NIST">[NIST]</dt>
         <dd>
