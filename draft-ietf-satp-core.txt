@@ -601,8 +601,9 @@ Table of Contents
    interacts only with gateways logging messages to that API can
    establish a resource profile as follows:
 
-   Application Name: TRACKER X-Tracker_URL: https://api.tracker.com/
-   updates X-Tracking-Policy: Always
+   Application Name: TRACKER
+   X-Tracker_URL: https://api.tracker.com/updates
+   X-Tracking-Policy: Always
 
    As gateways implement this functionality, they support the TRACKER
    application profile, and the application is able to expand its reach

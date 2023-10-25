@@ -1863,9 +1863,13 @@ This flow deals with the asset transfer and commitment establishment between two
 <a href="#section-5.8" class="section-number selfRef">5.8. </a><a href="#name-application-profile-negotia" class="section-name selfRef">Application Profile Negotiation</a>
         </h3>
 <p id="section-5.8-1">Where an application relies on specific extensions for operation, these can be represented in an Application Profile. For example, a payments application that tracks payments using a cloud-based API and interacts only with gateways logging messages to that API can establish a resource profile as follows:<a href="#section-5.8-1" class="pilcrow">¶</a></p>
-<p id="section-5.8-2">Application Name: TRACKER
+<div class="alignLeft art-text artwork" id="section-5.8-2">
+<pre>
+Application Name: TRACKER
 X-Tracker_URL: https://api.tracker.com/updates
-X-Tracking-Policy: Always<a href="#section-5.8-2" class="pilcrow">¶</a></p>
+X-Tracking-Policy: Always
+</pre><a href="#section-5.8-2" class="pilcrow">¶</a>
+</div>
 <p id="section-5.8-3">As gateways implement this functionality, they support the TRACKER application profile, and the application is able to expand its reach by periodically polling for the availability of the profile.<a href="#section-5.8-3" class="pilcrow">¶</a></p>
 <p id="section-5.8-4">This is an intentionally generalized extension mechanism for application or vendor specific functionality.<a href="#section-5.8-4" class="pilcrow">¶</a></p>
 </section>
