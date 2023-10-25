@@ -1657,10 +1657,6 @@ struct {
 
 15.1.  Normative References
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
    [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", May 2015,
               <https://www.rfc-editor.org/info/rfc7519>.
