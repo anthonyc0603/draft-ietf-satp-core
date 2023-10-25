@@ -204,7 +204,7 @@ Table of Contents
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [@!RFC2119].
+   document are to be interpreted as described in RFC 2119 [@RFC2119].
 
    In this document, these words will appear with that interpretation
    only when in ALL CAPS.  Lower case uses of these words are not to be
@@ -226,9 +226,10 @@ Table of Contents
    *  Recipient gateway: The gateway that is the recipient side of a
       unidirectional asset transfer.
 
-   *  Claim: An assertion made by an Entity [JWT].
+   *  Claim: An assertion made by an Entity [@!RFC7519].
 
-   *  Claim Type: Syntax used for representing a Claim Value [JWT].
+   *  Claim Type: Syntax used for representing a Claim Value
+      [@!RFC7519].
 
    *  Gateway Claim: An assertion made by a Gateway regarding the status
       or condition of resources (e.g. assets, public keys, etc.)
