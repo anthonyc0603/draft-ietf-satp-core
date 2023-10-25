@@ -204,7 +204,7 @@ Table of Contents
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 [@RFC2119].
+   document are to be interpreted as described in RFC 2119 [RFC2119].
 
    In this document, these words will appear with that interpretation
    only when in ALL CAPS.  Lower case uses of these words are not to be
@@ -226,10 +226,9 @@ Table of Contents
    *  Recipient gateway: The gateway that is the recipient side of a
       unidirectional asset transfer.
 
-   *  Claim: An assertion made by an Entity [@!RFC7519].
+   *  Claim: An assertion made by an Entity [RFC7519].
 
-   *  Claim Type: Syntax used for representing a Claim Value
-      [@!RFC7519].
+   *  Claim Type: Syntax used for representing a Claim Value [RFC7519].
 
    *  Gateway Claim: An assertion made by a Gateway regarding the status
       or condition of resources (e.g. assets, public keys, etc.)
@@ -545,7 +544,7 @@ Table of Contents
 5.6.2.  Client offers supported credential schemes
 
    Capability negotiation, similar to the Session Description Protocol
-   [RFC 5939], occurs prior to data exchange.  Initially, the client
+   [RFC5939], occurs prior to data exchange.  Initially, the client
    (application) sends a JSON block containing acceptable credential
    schemes, such as OAuth2.0 or SAML, in the "Credential Scheme" field
    of the SATP message.
@@ -1657,9 +1656,9 @@ struct {
 
 15.1.  Normative References
 
-   [RFC2234]  Crocker, D. and P. Overell, "Augmented BNF for Syntax
-              Specifications ABNF", November 1997,
-              <https://www.rfc-editor.org/info/rfc2234>.
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", May 2015,
