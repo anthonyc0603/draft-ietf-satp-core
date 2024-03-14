@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-12T00:27:24.157956+00:00",
+  "timestamp": "2024-03-14T00:27:16.258748+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -139,6 +139,56 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOKkmiaM5pZeTY",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/4",
+      "state": "MERGED",
+      "author": "findthomas",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Replaced \"phase\" with \"Stage\" to be consistent with the rest of the document and SATP-Arch (e.g. Stage-1, Stage-2, Stage-3).\r\n\r\nRemoved Section 4.5 as recommendation from Wes.  The section was mostly informative.",
+      "createdAt": "2024-03-12T15:47:55Z",
+      "updatedAt": "2024-03-12T16:43:40Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "f8a2e401b8028030b4bc650f0a6cf05d92234a19",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-3",
+      "headRefOid": "ed99bb6396d585fde1c9f3739b54142798d0ca5d",
+      "closedAt": "2024-03-12T15:49:18Z",
+      "mergedAt": "2024-03-12T15:49:18Z",
+      "mergedBy": "findthomas",
+      "mergeCommit": {
+        "oid": "780fd74ac93d6a1eae22dddcaeb0d9940898d691"
+      },
+      "comments": [
+        {
+          "author": "findthomas",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Word fixes and removal of Section 4.5.",
+          "createdAt": "2024-03-12T15:49:59Z",
+          "updatedAt": "2024-03-12T15:49:59Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKkmiaM5zIjl-",
+          "commit": {
+            "abbreviatedOid": "ed99bb6"
+          },
+          "author": "alexchiriac",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "LGTM!",
+          "createdAt": "2024-03-12T16:43:40Z",
+          "updatedAt": "2024-03-12T16:43:40Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
