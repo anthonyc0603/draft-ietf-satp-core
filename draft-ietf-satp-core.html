@@ -1534,24 +1534,24 @@ accessible to that gateway (e.g. within its network or system).<a href="#section
 </div>
 <p id="section-4.1-2">The protocol defines a number of API endpoints, resources and identifier definitions, and message flows corresponding to the asset transfer between the two gateways.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <p id="section-4.1-3">The current document pertains to the interaction between gateways through API2.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
-<p id="section-4.1-4">```
-             +----------+                +----------+
-             |  Client  |                | Off-net  |
-             |   (App)  |                | Resource |
-             +----------+                +----------+
-                  |                      |   API3   |
-                  |                      +----------+
-                  |                           ^
-                  V                           |
-             +----------+                     |
-             |   API1   |                     |
-  +------+   +----------+----+        +----+----------+   +------+
-  |      |   |          |    |        |    |          |   |      |
-  | Net. |   | Gateway  |API2|        |API2| Gateway  |   | Net. |
-  | NW1  |---|    G1    |    |&lt;------&gt;|    |    G2    |---| NW2  |
-  |      |   |          |    |        |    |          |   |      |
-  +------+   +----------+----+        +----+----------+   +------+<a href="#section-4.1-4" class="pilcrow">¶</a></p>
-<p id="section-4.1-5">```<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+<p id="section-4.1-4"><code>
+                 +----------+                +----------+
+                 |  Client  |                | Off-net  |
+                 |   (App)  |                | Resource |
+                 +----------+                +----------+
+                      |                      |   API3   |
+                      |                      +----------+
+                      |                           ^
+                      V                           |
+                 +---------+                      |
+                 |   API1  |                      |
+       +-----+   +---------+----+        +----+---------+   +-----+
+       |     |   |         |    |        |    |         |   |     |
+       | Net.|   | Gateway |API2|        |API2| Gateway |   | Net.|
+       | NW1 |---|    G1   |    |&lt;------&gt;|    |    G2   |---| NW2 |
+       |     |   |         |    |        |    |         |   |     |
+       +-----+   +---------+----+        +----+---------+   +-----+
+</code><a href="#section-4.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="satp-fig-overview">
@@ -1860,56 +1860,54 @@ This flow deals with the asset transfer and commitment establishment between two
 <p id="section-6-2">The Stage-1 flows pertains to the initialization of the transfer between the two gateways.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">After both gateways agree to commence the transfer at the start of Stage-2, the sending gateway G1 must deliver a signed assertion that it has performed the correct lock (burn) on the asset in network NW1. If that assertion is accepted by gateway G2, it must in return transmit a signed receipt to gateway G1 that it has created (minted) a temporary asset in NW2.<a href="#section-6-3" class="pilcrow">¶</a></p>
 <p id="section-6-4">The Stage-3 flows commits gateways G1 and G2 to the burn and mint in Stage-2. The reader is directed to [SATP-ARCH] for further discussion of this model.<a href="#section-6-4" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-6-5">
-<pre>
-   App1  NW1          G1                     G2          NW2    App2
-  ..|.....|............|......................|............|.....|..
-    |     |            |       Stage 1        |            |     |
-    |     |            |                      |            |     |
-    |     |       (1.1)|--- Init. Request ---&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |       (1.2)|&lt;--- Init. Response---|            |     |
-    |     |            |                      |            |     |
-  ..|.....|............|......................|............|.....|..
-    |     |            |       Stage 2        |            |     |
-    |     |            |                      |            |     |
-    |     |       (2.1)|&lt;--Transf. Commence--&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |       (2.2)|&lt;--- ACK Commence ---&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |            |                      |            |     |
-    |     |&lt;---Lock----|(2.3)                 |            |     |
-    |     |            |                      |            |     |
-    |     |       (2.4)|--- Lock-Assertion---&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |            |                 (2.5)|----Bcast--&gt;|     |
-    |     |            |                      |            |     |
-    |     |            |&lt;--Assertion Receipt--|(2.6)       |     |
-    |     |            |                      |            |     |
-  ..|.....|............|......................|............|.....|..
-    |     |            |       Stage 3        |            |     |
-    |     |            |                      |            |     |
-    |     |       (3.1)|----Commit Prepare---&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |            |                 (3.2)|----Mint---&gt;|     |
-    |     |            |                      |            |     |
-    |     |            |&lt;--- Commit Ready ----|(3.3)       |     |
-    |     |            |                      |            |     |
-    |     |&lt;---Burn----|(3.4)                 |            |     |
-    |     |            |                      |            |     |
-    |     |       (3.5)|---- Commit Final ---&gt;|            |     |
-    |     |            |                      |            |     |
-    |     |            |                 (3.6)|---Assign--&gt;|     |
-    |     |            |                      |            |     |
-    |     |            |&lt;-----ACK Final-------|(3.7)       |     |
-    |     |            |                      |            |     |
-    |     |            |                      |            |     |
-    |     |&lt;---Bcast---|(3.8)                 |            |     |
-    |     |            |                      |            |     |
-    |     |       (3.9)|--Transfer Complete--&gt;|            |     |
-  ..|.....|............|......................|............|.....|..
-</pre><a href="#section-6-5" class="pilcrow">¶</a>
-</div>
+<p id="section-6-5"><code>
+       App1  NW1          G1                     G2          NW2    App2
+      ..|.....|............|......................|............|.....|..
+        |     |            |       Stage 1        |            |     |
+        |     |            |                      |            |     |
+        |     |       (1.1)|--- Init. Request ---&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |       (1.2)|&lt;--- Init. Response---|            |     |
+        |     |            |                      |            |     |
+      ..|.....|............|......................|............|.....|..
+        |     |            |       Stage 2        |            |     |
+        |     |            |                      |            |     |
+        |     |       (2.1)|&lt;--Transf. Commence--&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |       (2.2)|&lt;--- ACK Commence ---&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |            |                      |            |     |
+        |     |&lt;---Lock----|(2.3)                 |            |     |
+        |     |            |                      |            |     |
+        |     |       (2.4)|--- Lock-Assertion---&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |            |                 (2.5)|----Bcast--&gt;|     |
+        |     |            |                      |            |     |
+        |     |            |&lt;--Assertion Receipt--|(2.6)       |     |
+        |     |            |                      |            |     |
+      ..|.....|............|......................|............|.....|..
+        |     |            |       Stage 3        |            |     |
+        |     |            |                      |            |     |
+        |     |       (3.1)|----Commit Prepare---&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |            |                 (3.2)|----Mint---&gt;|     |
+        |     |            |                      |            |     |
+        |     |            |&lt;--- Commit Ready ----|(3.3)       |     |
+        |     |            |                      |            |     |
+        |     |&lt;---Burn----|(3.4)                 |            |     |
+        |     |            |                      |            |     |
+        |     |       (3.5)|---- Commit Final ---&gt;|            |     |
+        |     |            |                      |            |     |
+        |     |            |                 (3.6)|---Assign--&gt;|     |
+        |     |            |                      |            |     |
+        |     |            |&lt;-----ACK Final-------|(3.7)       |     |
+        |     |            |                      |            |     |
+        |     |            |                      |            |     |
+        |     |&lt;---Bcast---|(3.8)                 |            |     |
+        |     |            |                      |            |     |
+        |     |       (3.9)|--Transfer Complete--&gt;|            |     |
+      ..|.....|............|......................|............|.....|..
+</code><a href="#section-6-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="identity-and-asset-verification-flow-stage-0">
