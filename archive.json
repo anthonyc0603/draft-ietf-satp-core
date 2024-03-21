@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-19T00:27:54.300912+00:00",
+  "timestamp": "2024-03-21T00:28:45.263146+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -189,6 +189,124 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOKkmiaM5qGc2G",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/5",
+      "state": "MERGED",
+      "author": "findthomas",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-03-19T14:47:49Z",
+      "updatedAt": "2024-03-19T16:34:08Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "7ba34eaf9661d8c1063a123762a707ac41edbe85",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-4",
+      "headRefOid": "90acbb5b7c7682d1c0c85d25aefe48b049112211",
+      "closedAt": "2024-03-19T16:33:42Z",
+      "mergedAt": "2024-03-19T16:33:42Z",
+      "mergedBy": "findthomas",
+      "mergeCommit": {
+        "oid": "e67c84c91ae276fc70b80734522c2b41633c00c4"
+      },
+      "comments": [
+        {
+          "author": "findthomas",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Moved text about API1 and API3 to the Appendix section.\r\n",
+          "createdAt": "2024-03-19T16:34:07Z",
+          "updatedAt": "2024-03-19T16:34:07Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOKkmiaM5qINnT",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/6",
+      "state": "MERGED",
+      "author": "findthomas",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-03-19T18:27:48Z",
+      "updatedAt": "2024-03-19T18:28:47Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "e67c84c91ae276fc70b80734522c2b41633c00c4",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-5",
+      "headRefOid": "94162eb3f230fdea0d3e3e4438781c201800dcc8",
+      "closedAt": "2024-03-19T18:28:46Z",
+      "mergedAt": "2024-03-19T18:28:46Z",
+      "mergedBy": "findthomas",
+      "mergeCommit": {
+        "oid": "d01682181b24b6db6eebad09abd6e54056aa77fc"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOKkmiaM5qOMAE",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/7",
+      "state": "CLOSED",
+      "author": "findthomas",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixed Figure 1 that was too wide.",
+      "createdAt": "2024-03-20T13:26:11Z",
+      "updatedAt": "2024-03-20T17:26:18Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "76316b0520a5c5a1670cf8f53256e41f46570657",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-6",
+      "headRefOid": "8978930dadba641debe57449860436c80167c3af",
+      "closedAt": "2024-03-20T17:26:18Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOKkmiaM5qPEQx",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/8",
+      "state": "MERGED",
+      "author": "findthomas",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Corrected Figure 1.\r\nAdded quotes to block figure area.",
+      "createdAt": "2024-03-20T15:12:01Z",
+      "updatedAt": "2024-03-20T17:26:11Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "76316b0520a5c5a1670cf8f53256e41f46570657",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-7",
+      "headRefOid": "04d90929d27b5cf91ee170071c05cb1039c7f6b9",
+      "closedAt": "2024-03-20T17:26:11Z",
+      "mergedAt": "2024-03-20T17:26:11Z",
+      "mergedBy": "RafaelAPB",
+      "mergeCommit": {
+        "oid": "9565d4a4dfbaa32a984bae105ae35c30cf059f1d"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
