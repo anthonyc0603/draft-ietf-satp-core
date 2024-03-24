@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-21T00:28:45.263146+00:00",
+  "timestamp": "2024-03-24T00:31:15.746926+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -75,7 +75,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/2",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Edits following review by Wes.",
@@ -96,7 +96,7 @@
       "comments": [
         {
           "author": "findthomas",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "2nd set of fixes.",
           "createdAt": "2024-03-11T19:40:33Z",
           "updatedAt": "2024-03-11T19:40:33Z"
@@ -111,7 +111,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/3",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Added flow diagram as requested by Wes.",
@@ -132,7 +132,7 @@
       "comments": [
         {
           "author": "findthomas",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "First set of fixes.",
           "createdAt": "2024-03-11T19:40:11Z",
           "updatedAt": "2024-03-11T19:40:11Z"
@@ -147,7 +147,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/4",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Replaced \"phase\" with \"Stage\" to be consistent with the rest of the document and SATP-Arch (e.g. Stage-1, Stage-2, Stage-3).\r\n\r\nRemoved Section 4.5 as recommendation from Wes.  The section was mostly informative.",
@@ -168,7 +168,7 @@
       "comments": [
         {
           "author": "findthomas",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "Word fixes and removal of Section 4.5.",
           "createdAt": "2024-03-12T15:49:59Z",
           "updatedAt": "2024-03-12T15:49:59Z"
@@ -197,7 +197,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/5",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
@@ -218,7 +218,7 @@
       "comments": [
         {
           "author": "findthomas",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "body": "Moved text about API1 and API3 to the Appendix section.\r\n",
           "createdAt": "2024-03-19T16:34:07Z",
           "updatedAt": "2024-03-19T16:34:07Z"
@@ -233,7 +233,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/6",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
@@ -261,7 +261,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/7",
       "state": "CLOSED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Fixed Figure 1 that was too wide.",
@@ -287,7 +287,7 @@
       "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/8",
       "state": "MERGED",
       "author": "findthomas",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Corrected Figure 1.\r\nAdded quotes to block figure area.",
