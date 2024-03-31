@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-28T00:28:02.979093+00:00",
+  "timestamp": "2024-03-31T00:31:51.156456+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -306,6 +306,42 @@
         "oid": "9565d4a4dfbaa32a984bae105ae35c30cf059f1d"
       },
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOKkmiaM5rLzoB",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/9",
+      "state": "MERGED",
+      "author": "findthomas",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Corrected message types.",
+      "createdAt": "2024-03-29T16:39:46Z",
+      "updatedAt": "2024-03-29T16:44:25Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "9565d4a4dfbaa32a984bae105ae35c30cf059f1d",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-8",
+      "headRefOid": "c642b4a778fcdc1543e31a5ffe3bf577a7a11941",
+      "closedAt": "2024-03-29T16:44:25Z",
+      "mergedAt": "2024-03-29T16:44:25Z",
+      "mergedBy": "findthomas",
+      "mergeCommit": {
+        "oid": "9caa9ad9bece603006b8c97b4aedd32fe0bdc90d"
+      },
+      "comments": [
+        {
+          "author": "findthomas",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Corrected SATP message types. ",
+          "createdAt": "2024-03-29T16:44:18Z",
+          "updatedAt": "2024-03-29T16:44:18Z"
+        }
+      ],
       "reviews": []
     }
   ]
