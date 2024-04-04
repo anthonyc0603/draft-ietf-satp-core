@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-02T00:28:20.794089+00:00",
+  "timestamp": "2024-04-04T00:29:07.626087+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -342,6 +342,32 @@
           "updatedAt": "2024-03-29T16:44:18Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOKkmiaM5rnMyG",
+      "title": "Update draft-ietf-satp-core.md",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/10",
+      "state": "OPEN",
+      "author": "findthomas",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "(a) Defined the keys used by gateways (Section 4.5).\r\n\r\n(b) Removal of duplicated client pub key and server pub key in each message (when it was already shared in Stage 1).",
+      "createdAt": "2024-04-03T19:35:40Z",
+      "updatedAt": "2024-04-03T19:35:40Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "9caa9ad9bece603006b8c97b4aedd32fe0bdc90d",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "findthomas-patch-9",
+      "headRefOid": "e7773d8b685329c9310668ef45c50108fa291ac8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
