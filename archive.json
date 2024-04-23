@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-21T00:31:28.553698+00:00",
+  "timestamp": "2024-04-23T00:29:07.736016+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -245,7 +245,7 @@
             "abbreviatedOid": "ed99bb6"
           },
           "author": "alexchiriac",
-          "authorAssociation": "NONE",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "LGTM!",
           "createdAt": "2024-03-12T16:43:40Z",
@@ -462,6 +462,42 @@
         "oid": "2e8c06735b64bbdd3ea3626361dd1c9cd1b2e3cb"
       },
       "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOKkmiaM5tX7P3",
+      "title": "API1 Review",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/pull/16",
+      "state": "MERGED",
+      "author": "alexchiriac",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "- change specific API1 protocol back to HTTP\r\n- propose OAuth2.0 as the authentication mechanism for API1 clients\r\n- clarify examples\r\n\r\nAfter merging this PR, I will add a section for Considerations on Smart Contract Networks. In that section, I will mention that a smart contract to represent the asset on the destination network needs to be deployed before the client application starts an asset transfer.",
+      "createdAt": "2024-04-22T16:21:37Z",
+      "updatedAt": "2024-04-22T17:37:19Z",
+      "baseRepository": "ietf-satp/draft-ietf-satp-core",
+      "baseRefName": "main",
+      "baseRefOid": "2e1e280aff9fe50a471e55f69cba077fd470f980",
+      "headRepository": "ietf-satp/draft-ietf-satp-core",
+      "headRefName": "feat/api1-review",
+      "headRefOid": "f491e39450bf8155be88d26865cb82b3e16bfc0c",
+      "closedAt": "2024-04-22T17:36:52Z",
+      "mergedAt": "2024-04-22T17:36:52Z",
+      "mergedBy": "findthomas",
+      "mergeCommit": {
+        "oid": "ab7fc735f3b029bc380b96ca566ff8ad91da9ac1"
+      },
+      "comments": [
+        {
+          "author": "findthomas",
+          "authorAssociation": "COLLABORATOR",
+          "body": "(from Alex)",
+          "createdAt": "2024-04-22T17:37:18Z",
+          "updatedAt": "2024-04-22T17:37:18Z"
+        }
+      ],
       "reviews": []
     }
   ]
