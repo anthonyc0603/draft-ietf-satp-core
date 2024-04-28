@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-25T00:30:27.653625+00:00",
+  "timestamp": "2024-04-28T00:32:11.363983+00:00",
   "repo": "ietf-satp/draft-ietf-satp-core",
   "labels": [
     {
@@ -127,6 +127,22 @@
       "body": "I believe UUIDv2 is too restrictive. I would suggest we mention a more technology-neutral formulation, e.g. that digital asset identifiers should be globally unique and let the implementors decide how the digital asset identifiers could be defined",
       "createdAt": "2024-04-08T13:48:39Z",
       "updatedAt": "2024-04-08T13:48:39Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOKkmiaM6G4LgC",
+      "title": "Potential solution to fix whitespace trailing problems on PRs",
+      "url": "https://github.com/ietf-satp/draft-ietf-satp-core/issues/17",
+      "state": "OPEN",
+      "author": "RafaelAPB",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "By [Carsten Bormann <cabo@tzi.org>](mailto:cabo@tzi.org), via mailing list:\r\n\r\n> However, note that EditorConfig also acts upon the yaml definition at the beginning of the draft,\r\n\r\nI don\u2019t know why this happens (would need to look at the editorconfig setup), but you probably don\u2019t need a\r\n\r\npi:\r\n\r\nsubtree in the YAML any more.\r\n\r\nJust replace that (and the \u201cstand_alone: yes\u201d) by\r\n\r\nv: 3\r\n\r\n",
+      "createdAt": "2024-04-25T07:22:26Z",
+      "updatedAt": "2024-04-25T07:22:26Z",
       "closedAt": null,
       "comments": []
     }
